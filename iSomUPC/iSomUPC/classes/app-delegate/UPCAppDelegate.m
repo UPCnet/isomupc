@@ -22,8 +22,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // TODO: Include Flurry API key and activate it
-    //[FlurryAnalytics startSession:@""];
+    [FlurryAnalytics startSession:@"Q327W78Z3TYMEYARTQFM"];
     [self.window makeKeyAndVisible];
     return YES;
 }
