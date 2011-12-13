@@ -1,0 +1,566 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D586E6F14975EB8004A5E92 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586E6E14975EB8004A5E92 /* UIKit.framework */; };
+		1D586E7114975EB8004A5E92 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586E7014975EB8004A5E92 /* Foundation.framework */; };
+		1D586E7314975EB8004A5E92 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586E7214975EB8004A5E92 /* CoreGraphics.framework */; };
+		1D586E9B14975EB9004A5E92 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586E9A14975EB9004A5E92 /* SenTestingKit.framework */; };
+		1D586E9C14975EB9004A5E92 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586E6E14975EB8004A5E92 /* UIKit.framework */; };
+		1D586E9D14975EB9004A5E92 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586E7014975EB8004A5E92 /* Foundation.framework */; };
+		1D586ECA14976099004A5E92 /* UPCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D586EB414976099004A5E92 /* UPCAppDelegate.m */; };
+		1D586ECB14976099004A5E92 /* UPCFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D586EB714976099004A5E92 /* UPCFirstViewController.m */; };
+		1D586ECC14976099004A5E92 /* UPCSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D586EB914976099004A5E92 /* UPCSecondViewController.m */; };
+		1D586ECD14976099004A5E92 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D586EC114976099004A5E92 /* first.png */; };
+		1D586ECE14976099004A5E92 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D586EC214976099004A5E92 /* first@2x.png */; };
+		1D586ECF14976099004A5E92 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D586EC314976099004A5E92 /* second.png */; };
+		1D586ED014976099004A5E92 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D586EC414976099004A5E92 /* second@2x.png */; };
+		1D586ED114976099004A5E92 /* UPCFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D586EC814976099004A5E92 /* UPCFirstViewController.xib */; };
+		1D586ED214976099004A5E92 /* UPCSecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D586EC914976099004A5E92 /* UPCSecondViewController.xib */; };
+		1D586ED7149760CA004A5E92 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D586ED3149760CA004A5E92 /* InfoPlist.strings */; };
+		1D586ED8149760CA004A5E92 /* iSomUPC-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D586ED4149760CA004A5E92 /* iSomUPC-Info.plist */; };
+		1D586ED9149760CA004A5E92 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D586ED6149760CA004A5E92 /* main.m */; };
+		1D586EDD1497619C004A5E92 /* iSomUPCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D586EDC1497619C004A5E92 /* iSomUPCTests.m */; };
+		1D586EE0149761AA004A5E92 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D586EDE149761AA004A5E92 /* InfoPlist.strings */; };
+		1D586EE1149761AA004A5E92 /* iSomUPCTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D586EDF149761AA004A5E92 /* iSomUPCTests-Info.plist */; };
+		1D586F39149764DC004A5E92 /* UPCiSomUPC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D586F38149764DC004A5E92 /* UPCiSomUPC.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1D586E9E14975EB9004A5E92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D586E6114975EB8004A5E92 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D586E6914975EB8004A5E92;
+			remoteInfo = iSomUPC;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1D586E6A14975EB8004A5E92 /* iSomUPC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSomUPC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D586E6E14975EB8004A5E92 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1D586E7014975EB8004A5E92 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D586E7214975EB8004A5E92 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1D586E9914975EB9004A5E92 /* iSomUPCTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iSomUPCTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D586E9A14975EB9004A5E92 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		1D586EB314976099004A5E92 /* UPCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCAppDelegate.h; sourceTree = "<group>"; };
+		1D586EB414976099004A5E92 /* UPCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCAppDelegate.m; sourceTree = "<group>"; };
+		1D586EB614976099004A5E92 /* UPCFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCFirstViewController.h; sourceTree = "<group>"; };
+		1D586EB714976099004A5E92 /* UPCFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCFirstViewController.m; sourceTree = "<group>"; };
+		1D586EB814976099004A5E92 /* UPCSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCSecondViewController.h; sourceTree = "<group>"; };
+		1D586EB914976099004A5E92 /* UPCSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCSecondViewController.m; sourceTree = "<group>"; };
+		1D586EC114976099004A5E92 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		1D586EC214976099004A5E92 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		1D586EC314976099004A5E92 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		1D586EC414976099004A5E92 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		1D586EC814976099004A5E92 /* UPCFirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UPCFirstViewController.xib; sourceTree = "<group>"; };
+		1D586EC914976099004A5E92 /* UPCSecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UPCSecondViewController.xib; sourceTree = "<group>"; };
+		1D586ED3149760CA004A5E92 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		1D586ED4149760CA004A5E92 /* iSomUPC-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iSomUPC-Info.plist"; sourceTree = "<group>"; };
+		1D586ED5149760CA004A5E92 /* iSomUPC-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iSomUPC-Prefix.pch"; sourceTree = "<group>"; };
+		1D586ED6149760CA004A5E92 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1D586EDB1497619C004A5E92 /* iSomUPCTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iSomUPCTests.h; sourceTree = "<group>"; };
+		1D586EDC1497619C004A5E92 /* iSomUPCTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iSomUPCTests.m; sourceTree = "<group>"; };
+		1D586EDE149761AA004A5E92 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		1D586EDF149761AA004A5E92 /* iSomUPCTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iSomUPCTests-Info.plist"; sourceTree = "<group>"; };
+		1D586F38149764DC004A5E92 /* UPCiSomUPC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UPCiSomUPC.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D586E6714975EB8004A5E92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D586E6F14975EB8004A5E92 /* UIKit.framework in Frameworks */,
+				1D586E7114975EB8004A5E92 /* Foundation.framework in Frameworks */,
+				1D586E7314975EB8004A5E92 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D586E9514975EB9004A5E92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D586E9B14975EB9004A5E92 /* SenTestingKit.framework in Frameworks */,
+				1D586E9C14975EB9004A5E92 /* UIKit.framework in Frameworks */,
+				1D586E9D14975EB9004A5E92 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1D586E5F14975EB8004A5E92 = {
+			isa = PBXGroup;
+			children = (
+				1D586E7414975EB8004A5E92 /* iSomUPC */,
+				1D586EA014975EB9004A5E92 /* iSomUPCTests */,
+				1D586E6D14975EB8004A5E92 /* Frameworks */,
+				1D586E6B14975EB8004A5E92 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1D586E6B14975EB8004A5E92 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D586E6A14975EB8004A5E92 /* iSomUPC.app */,
+				1D586E9914975EB9004A5E92 /* iSomUPCTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1D586E6D14975EB8004A5E92 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D586E6E14975EB8004A5E92 /* UIKit.framework */,
+				1D586E7014975EB8004A5E92 /* Foundation.framework */,
+				1D586E7214975EB8004A5E92 /* CoreGraphics.framework */,
+				1D586E9A14975EB9004A5E92 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1D586E7414975EB8004A5E92 /* iSomUPC */ = {
+			isa = PBXGroup;
+			children = (
+				1D586EB114976099004A5E92 /* classes */,
+				1D586EBE14976099004A5E92 /* resources */,
+				1D586E7514975EB8004A5E92 /* Supporting Files */,
+			);
+			path = iSomUPC;
+			sourceTree = "<group>";
+		};
+		1D586E7514975EB8004A5E92 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1D586ED3149760CA004A5E92 /* InfoPlist.strings */,
+				1D586ED4149760CA004A5E92 /* iSomUPC-Info.plist */,
+				1D586ED5149760CA004A5E92 /* iSomUPC-Prefix.pch */,
+				1D586ED6149760CA004A5E92 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1D586EA014975EB9004A5E92 /* iSomUPCTests */ = {
+			isa = PBXGroup;
+			children = (
+				1D586EDA1497619C004A5E92 /* classes */,
+				1D586EA114975EB9004A5E92 /* Supporting Files */,
+			);
+			path = iSomUPCTests;
+			sourceTree = "<group>";
+		};
+		1D586EA114975EB9004A5E92 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1D586EDE149761AA004A5E92 /* InfoPlist.strings */,
+				1D586EDF149761AA004A5E92 /* iSomUPCTests-Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1D586EB114976099004A5E92 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				1D586EB214976099004A5E92 /* app-delegate */,
+				1D586EB514976099004A5E92 /* controllers */,
+				1D586EBA14976099004A5E92 /* controls */,
+				1D586EBB14976099004A5E92 /* helpers */,
+				1D586EBC14976099004A5E92 /* models */,
+				1D586EBD14976099004A5E92 /* views */,
+			);
+			path = classes;
+			sourceTree = "<group>";
+		};
+		1D586EB214976099004A5E92 /* app-delegate */ = {
+			isa = PBXGroup;
+			children = (
+				1D586EB314976099004A5E92 /* UPCAppDelegate.h */,
+				1D586EB414976099004A5E92 /* UPCAppDelegate.m */,
+			);
+			path = "app-delegate";
+			sourceTree = "<group>";
+		};
+		1D586EB514976099004A5E92 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1D586EB614976099004A5E92 /* UPCFirstViewController.h */,
+				1D586EB714976099004A5E92 /* UPCFirstViewController.m */,
+				1D586EB814976099004A5E92 /* UPCSecondViewController.h */,
+				1D586EB914976099004A5E92 /* UPCSecondViewController.m */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		1D586EBA14976099004A5E92 /* controls */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controls;
+			sourceTree = "<group>";
+		};
+		1D586EBB14976099004A5E92 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
+		1D586EBC14976099004A5E92 /* models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		1D586EBD14976099004A5E92 /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		1D586EBE14976099004A5E92 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				1D586EBF14976099004A5E92 /* data */,
+				1D586EC014976099004A5E92 /* images */,
+				1D586EC514976099004A5E92 /* plist */,
+				1D586EC614976099004A5E92 /* sounds */,
+				1D586EC714976099004A5E92 /* xib */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		1D586EBF14976099004A5E92 /* data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		1D586EC014976099004A5E92 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				1D586EC114976099004A5E92 /* first.png */,
+				1D586EC214976099004A5E92 /* first@2x.png */,
+				1D586EC314976099004A5E92 /* second.png */,
+				1D586EC414976099004A5E92 /* second@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		1D586EC514976099004A5E92 /* plist */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = plist;
+			sourceTree = "<group>";
+		};
+		1D586EC614976099004A5E92 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = sounds;
+			sourceTree = "<group>";
+		};
+		1D586EC714976099004A5E92 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				1D586EC814976099004A5E92 /* UPCFirstViewController.xib */,
+				1D586EC914976099004A5E92 /* UPCSecondViewController.xib */,
+				1D586F38149764DC004A5E92 /* UPCiSomUPC.xib */,
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		1D586EDA1497619C004A5E92 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				1D586EDB1497619C004A5E92 /* iSomUPCTests.h */,
+				1D586EDC1497619C004A5E92 /* iSomUPCTests.m */,
+			);
+			path = classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D586E6914975EB8004A5E92 /* iSomUPC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D586EAB14975EB9004A5E92 /* Build configuration list for PBXNativeTarget "iSomUPC" */;
+			buildPhases = (
+				1D586E6614975EB8004A5E92 /* Sources */,
+				1D586E6714975EB8004A5E92 /* Frameworks */,
+				1D586E6814975EB8004A5E92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iSomUPC;
+			productName = iSomUPC;
+			productReference = 1D586E6A14975EB8004A5E92 /* iSomUPC.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1D586E9814975EB9004A5E92 /* iSomUPCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D586EAE14975EB9004A5E92 /* Build configuration list for PBXNativeTarget "iSomUPCTests" */;
+			buildPhases = (
+				1D586E9414975EB9004A5E92 /* Sources */,
+				1D586E9514975EB9004A5E92 /* Frameworks */,
+				1D586E9614975EB9004A5E92 /* Resources */,
+				1D586E9714975EB9004A5E92 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1D586E9F14975EB9004A5E92 /* PBXTargetDependency */,
+			);
+			name = iSomUPCTests;
+			productName = iSomUPCTests;
+			productReference = 1D586E9914975EB9004A5E92 /* iSomUPCTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1D586E6114975EB8004A5E92 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Rude Labs";
+			};
+			buildConfigurationList = 1D586E6414975EB8004A5E92 /* Build configuration list for PBXProject "iSomUPC" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1D586E5F14975EB8004A5E92;
+			productRefGroup = 1D586E6B14975EB8004A5E92 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D586E6914975EB8004A5E92 /* iSomUPC */,
+				1D586E9814975EB9004A5E92 /* iSomUPCTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D586E6814975EB8004A5E92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D586ECD14976099004A5E92 /* first.png in Resources */,
+				1D586ECE14976099004A5E92 /* first@2x.png in Resources */,
+				1D586ECF14976099004A5E92 /* second.png in Resources */,
+				1D586ED014976099004A5E92 /* second@2x.png in Resources */,
+				1D586ED114976099004A5E92 /* UPCFirstViewController.xib in Resources */,
+				1D586ED214976099004A5E92 /* UPCSecondViewController.xib in Resources */,
+				1D586ED7149760CA004A5E92 /* InfoPlist.strings in Resources */,
+				1D586ED8149760CA004A5E92 /* iSomUPC-Info.plist in Resources */,
+				1D586F39149764DC004A5E92 /* UPCiSomUPC.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D586E9614975EB9004A5E92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D586EE0149761AA004A5E92 /* InfoPlist.strings in Resources */,
+				1D586EE1149761AA004A5E92 /* iSomUPCTests-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D586E9714975EB9004A5E92 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D586E6614975EB8004A5E92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D586ECA14976099004A5E92 /* UPCAppDelegate.m in Sources */,
+				1D586ECB14976099004A5E92 /* UPCFirstViewController.m in Sources */,
+				1D586ECC14976099004A5E92 /* UPCSecondViewController.m in Sources */,
+				1D586ED9149760CA004A5E92 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D586E9414975EB9004A5E92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D586EDD1497619C004A5E92 /* iSomUPCTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1D586E9F14975EB9004A5E92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D586E6914975EB8004A5E92 /* iSomUPC */;
+			targetProxy = 1D586E9E14975EB9004A5E92 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1D586EA914975EB9004A5E92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1D586EAA14975EB9004A5E92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1D586EAC14975EB9004A5E92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iSomUPC/iSomUPC-Prefix.pch";
+				INFOPLIST_FILE = "iSomUPC/iSomUPC-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1D586EAD14975EB9004A5E92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iSomUPC/iSomUPC-Prefix.pch";
+				INFOPLIST_FILE = "iSomUPC/iSomUPC-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		1D586EAF14975EB9004A5E92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iSomUPC.app/iSomUPC";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iSomUPC/iSomUPC-Prefix.pch";
+				INFOPLIST_FILE = "iSomUPCTests/iSomUPCTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		1D586EB014975EB9004A5E92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iSomUPC.app/iSomUPC";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iSomUPC/iSomUPC-Prefix.pch";
+				INFOPLIST_FILE = "iSomUPCTests/iSomUPCTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D586E6414975EB8004A5E92 /* Build configuration list for PBXProject "iSomUPC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D586EA914975EB9004A5E92 /* Debug */,
+				1D586EAA14975EB9004A5E92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D586EAB14975EB9004A5E92 /* Build configuration list for PBXNativeTarget "iSomUPC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D586EAC14975EB9004A5E92 /* Debug */,
+				1D586EAD14975EB9004A5E92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D586EAE14975EB9004A5E92 /* Build configuration list for PBXNativeTarget "iSomUPCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D586EAF14975EB9004A5E92 /* Debug */,
+				1D586EB014975EB9004A5E92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1D586E6114975EB8004A5E92 /* Project object */;
+}
