@@ -4,4 +4,7 @@
    <FileRef
       location = "group:iSomUPC/iSomUPC.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Kiwi/Kiwi.xcodeproj">
+   </FileRef>
 </Workspace>
