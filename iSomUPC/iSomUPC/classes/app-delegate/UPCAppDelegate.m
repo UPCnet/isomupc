@@ -7,10 +7,9 @@
 //
 
 #import "UPCAppDelegate.h"
-
 #import "UPCFirstViewController.h"
-
 #import "UPCSecondViewController.h"
+#import "FlurryAnalytics.h"
 
 @implementation UPCAppDelegate
 
@@ -19,8 +18,12 @@
 @synthesize window = _window;
 @synthesize tabBarController = _tabBarController;
 
+#pragma mark - Application life cycle
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // TODO: Include Flurry API key and activate it
+    //[FlurryAnalytics startSession:@""];
     [self.window makeKeyAndVisible];
     return YES;
 }

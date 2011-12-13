@@ -23,12 +23,11 @@
 		1D586ED114976099004A5E92 /* UPCFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D586EC814976099004A5E92 /* UPCFirstViewController.xib */; };
 		1D586ED214976099004A5E92 /* UPCSecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D586EC914976099004A5E92 /* UPCSecondViewController.xib */; };
 		1D586ED7149760CA004A5E92 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D586ED3149760CA004A5E92 /* InfoPlist.strings */; };
-		1D586ED8149760CA004A5E92 /* iSomUPC-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D586ED4149760CA004A5E92 /* iSomUPC-Info.plist */; };
 		1D586ED9149760CA004A5E92 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D586ED6149760CA004A5E92 /* main.m */; };
 		1D586EDD1497619C004A5E92 /* iSomUPCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D586EDC1497619C004A5E92 /* iSomUPCTests.m */; };
 		1D586EE0149761AA004A5E92 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D586EDE149761AA004A5E92 /* InfoPlist.strings */; };
-		1D586EE1149761AA004A5E92 /* iSomUPCTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D586EDF149761AA004A5E92 /* iSomUPCTests-Info.plist */; };
 		1D586F39149764DC004A5E92 /* UPCiSomUPC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D586F38149764DC004A5E92 /* UPCiSomUPC.xib */; };
+		1D586F3F14976C9C004A5E92 /* libFlurryAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586F3E14976C9C004A5E92 /* libFlurryAnalytics.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +68,8 @@
 		1D586EDE149761AA004A5E92 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		1D586EDF149761AA004A5E92 /* iSomUPCTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iSomUPCTests-Info.plist"; sourceTree = "<group>"; };
 		1D586F38149764DC004A5E92 /* UPCiSomUPC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UPCiSomUPC.xib; sourceTree = "<group>"; };
+		1D586F3D14976C9C004A5E92 /* FlurryAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAnalytics.h; sourceTree = "<group>"; };
+		1D586F3E14976C9C004A5E92 /* libFlurryAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurryAnalytics.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +80,7 @@
 				1D586E6F14975EB8004A5E92 /* UIKit.framework in Frameworks */,
 				1D586E7114975EB8004A5E92 /* Foundation.framework in Frameworks */,
 				1D586E7314975EB8004A5E92 /* CoreGraphics.framework in Frameworks */,
+				1D586F3F14976C9C004A5E92 /* libFlurryAnalytics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				1D586EB114976099004A5E92 /* classes */,
+				1D586F3B14976C9B004A5E92 /* libraries */,
 				1D586EBE14976099004A5E92 /* resources */,
 				1D586E7514975EB8004A5E92 /* Supporting Files */,
 			);
@@ -288,6 +291,23 @@
 			path = classes;
 			sourceTree = "<group>";
 		};
+		1D586F3B14976C9B004A5E92 /* libraries */ = {
+			isa = PBXGroup;
+			children = (
+				1D586F3C14976C9C004A5E92 /* FlurryAnalytics */,
+			);
+			path = libraries;
+			sourceTree = "<group>";
+		};
+		1D586F3C14976C9C004A5E92 /* FlurryAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				1D586F3D14976C9C004A5E92 /* FlurryAnalytics.h */,
+				1D586F3E14976C9C004A5E92 /* libFlurryAnalytics.a */,
+			);
+			path = FlurryAnalytics;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -366,7 +386,6 @@
 				1D586ED114976099004A5E92 /* UPCFirstViewController.xib in Resources */,
 				1D586ED214976099004A5E92 /* UPCSecondViewController.xib in Resources */,
 				1D586ED7149760CA004A5E92 /* InfoPlist.strings in Resources */,
-				1D586ED8149760CA004A5E92 /* iSomUPC-Info.plist in Resources */,
 				1D586F39149764DC004A5E92 /* UPCiSomUPC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,7 +395,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D586EE0149761AA004A5E92 /* InfoPlist.strings in Resources */,
-				1D586EE1149761AA004A5E92 /* iSomUPCTests-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +498,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iSomUPC/iSomUPC-Prefix.pch";
 				INFOPLIST_FILE = "iSomUPC/iSomUPC-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/iSomUPC/libraries/FlurryAnalytics\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -491,6 +514,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iSomUPC/iSomUPC-Prefix.pch";
 				INFOPLIST_FILE = "iSomUPC/iSomUPC-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/iSomUPC/libraries/FlurryAnalytics\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
