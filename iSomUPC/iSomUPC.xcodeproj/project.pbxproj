@@ -29,6 +29,13 @@
 		1D586F3F14976C9C004A5E92 /* libFlurryAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586F3E14976C9C004A5E92 /* libFlurryAnalytics.a */; };
 		1D586F4514977174004A5E92 /* UPCKiwiTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D586F4414977174004A5E92 /* UPCKiwiTest.m */; };
 		1D586F471497723F004A5E92 /* libKiwi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586F461497723F004A5E92 /* libKiwi.a */; };
+		1D586F4C14977EA9004A5E92 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586F4B14977EA9004A5E92 /* libRestKit.a */; };
+		1D586F4E14977EB4004A5E92 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586F4D14977EB4004A5E92 /* CFNetwork.framework */; };
+		1D586F5014977EC3004A5E92 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586F4F14977EC3004A5E92 /* CoreData.framework */; };
+		1D586F5214977ED0004A5E92 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586F5114977ED0004A5E92 /* Security.framework */; };
+		1D586F5414977EDD004A5E92 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586F5314977EDD004A5E92 /* MobileCoreServices.framework */; };
+		1D586F5614977EEC004A5E92 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586F5514977EEB004A5E92 /* SystemConfiguration.framework */; };
+		1D586F5814977EFA004A5E92 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586F5714977EFA004A5E92 /* libxml2.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +77,14 @@
 		1D586F3D14976C9C004A5E92 /* FlurryAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAnalytics.h; sourceTree = "<group>"; };
 		1D586F3E14976C9C004A5E92 /* libFlurryAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurryAnalytics.a; sourceTree = "<group>"; };
 		1D586F4414977174004A5E92 /* UPCKiwiTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCKiwiTest.m; sourceTree = "<group>"; };
-		1D586F461497723F004A5E92 /* libKiwi.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libKiwi.a; path = "../Kiwi/build/Release-iphoneos/libKiwi.a"; sourceTree = "<group>"; };
+		1D586F461497723F004A5E92 /* libKiwi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKiwi.a; path = "../Kiwi/build/Release-iphoneos/libKiwi.a"; sourceTree = "<group>"; };
+		1D586F4B14977EA9004A5E92 /* libRestKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRestKit.a; path = "../RestKit/build/Release-iphoneos/libRestKit.a"; sourceTree = "<group>"; };
+		1D586F4D14977EB4004A5E92 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		1D586F4F14977EC3004A5E92 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1D586F5114977ED0004A5E92 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		1D586F5314977EDD004A5E92 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		1D586F5514977EEB004A5E92 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1D586F5714977EFA004A5E92 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +96,13 @@
 				1D586E7114975EB8004A5E92 /* Foundation.framework in Frameworks */,
 				1D586E7314975EB8004A5E92 /* CoreGraphics.framework in Frameworks */,
 				1D586F3F14976C9C004A5E92 /* libFlurryAnalytics.a in Frameworks */,
+				1D586F4C14977EA9004A5E92 /* libRestKit.a in Frameworks */,
+				1D586F4E14977EB4004A5E92 /* CFNetwork.framework in Frameworks */,
+				1D586F5014977EC3004A5E92 /* CoreData.framework in Frameworks */,
+				1D586F5214977ED0004A5E92 /* Security.framework in Frameworks */,
+				1D586F5414977EDD004A5E92 /* MobileCoreServices.framework in Frameworks */,
+				1D586F5614977EEC004A5E92 /* SystemConfiguration.framework in Frameworks */,
+				1D586F5814977EFA004A5E92 /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +147,13 @@
 				1D586E7014975EB8004A5E92 /* Foundation.framework */,
 				1D586E7214975EB8004A5E92 /* CoreGraphics.framework */,
 				1D586E9A14975EB9004A5E92 /* SenTestingKit.framework */,
+				1D586F4B14977EA9004A5E92 /* libRestKit.a */,
+				1D586F4D14977EB4004A5E92 /* CFNetwork.framework */,
+				1D586F4F14977EC3004A5E92 /* CoreData.framework */,
+				1D586F5114977ED0004A5E92 /* Security.framework */,
+				1D586F5314977EDD004A5E92 /* MobileCoreServices.framework */,
+				1D586F5514977EEB004A5E92 /* SystemConfiguration.framework */,
+				1D586F5714977EFA004A5E92 /* libxml2.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -499,13 +527,19 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iSomUPC/iSomUPC-Prefix.pch";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "iSomUPC/iSomUPC-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/iSomUPC/libraries/FlurryAnalytics\"",
 				);
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/../RestKit/Build";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -515,13 +549,19 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iSomUPC/iSomUPC-Prefix.pch";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "iSomUPC/iSomUPC-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/iSomUPC/libraries/FlurryAnalytics\"",
 				);
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/../RestKit/Build";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -536,11 +576,12 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iSomUPC/iSomUPC-Prefix.pch";
-				HEADER_SEARCH_PATHS = ../Kiwi/Kiwi;
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "iSomUPCTests/iSomUPCTests-Info.plist";
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/../Kiwi/Kiwi";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -555,11 +596,12 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iSomUPC/iSomUPC-Prefix.pch";
-				HEADER_SEARCH_PATHS = ../Kiwi/Kiwi;
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "iSomUPCTests/iSomUPCTests-Info.plist";
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/../Kiwi/Kiwi";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
