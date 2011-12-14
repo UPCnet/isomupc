@@ -384,7 +384,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0420;
-				ORGANIZATIONNAME = "Rude Labs";
+				ORGANIZATIONNAME = UPCnet;
 			};
 			buildConfigurationList = 1D586E6414975EB8004A5E92 /* Build configuration list for PBXProject "iSomUPC" */;
 			compatibilityVersion = "Xcode 3.2";
