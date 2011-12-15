@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D105FDC149A15D80023D668 /* ASObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D105FDB149A15D80023D668 /* ASObject.m */; };
+		1D105FDF149A15F60023D668 /* ASPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D105FDE149A15F60023D668 /* ASPerson.m */; };
+		1D105FE2149A179B0023D668 /* ASNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D105FE1149A179B0023D668 /* ASNote.m */; };
+		1D105FE5149A192A0023D668 /* ASActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D105FE4149A192A0023D668 /* ASActivity.m */; };
+		1D105FE8149A1BBF0023D668 /* ASMediaLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D105FE7149A1BBE0023D668 /* ASMediaLink.m */; };
+		1D105FED149A1FFF0023D668 /* ASActivityTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D105FEC149A1FFF0023D668 /* ASActivityTest.m */; };
 		1D586E6F14975EB8004A5E92 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586E6E14975EB8004A5E92 /* UIKit.framework */; };
 		1D586E7114975EB8004A5E92 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586E7014975EB8004A5E92 /* Foundation.framework */; };
 		1D586E7314975EB8004A5E92 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586E7214975EB8004A5E92 /* CoreGraphics.framework */; };
@@ -25,7 +31,6 @@
 		1D586EE0149761AA004A5E92 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D586EDE149761AA004A5E92 /* InfoPlist.strings */; };
 		1D586F39149764DC004A5E92 /* UPCiSomUPC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D586F38149764DC004A5E92 /* UPCiSomUPC.xib */; };
 		1D586F3F14976C9C004A5E92 /* libFlurryAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586F3E14976C9C004A5E92 /* libFlurryAnalytics.a */; };
-		1D586F4514977174004A5E92 /* UPCKiwiTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D586F4414977174004A5E92 /* UPCKiwiTest.m */; };
 		1D586F471497723F004A5E92 /* libKiwi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586F461497723F004A5E92 /* libKiwi.a */; };
 		1D586F4C14977EA9004A5E92 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586F4B14977EA9004A5E92 /* libRestKit.a */; };
 		1D586F4E14977EB4004A5E92 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586F4D14977EB4004A5E92 /* CFNetwork.framework */; };
@@ -50,6 +55,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D105FDA149A15D80023D668 /* ASObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASObject.h; sourceTree = "<group>"; };
+		1D105FDB149A15D80023D668 /* ASObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASObject.m; sourceTree = "<group>"; };
+		1D105FDD149A15F60023D668 /* ASPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPerson.h; sourceTree = "<group>"; };
+		1D105FDE149A15F60023D668 /* ASPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPerson.m; sourceTree = "<group>"; };
+		1D105FE0149A179A0023D668 /* ASNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASNote.h; sourceTree = "<group>"; };
+		1D105FE1149A179B0023D668 /* ASNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASNote.m; sourceTree = "<group>"; };
+		1D105FE3149A192A0023D668 /* ASActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASActivity.h; sourceTree = "<group>"; };
+		1D105FE4149A192A0023D668 /* ASActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASActivity.m; sourceTree = "<group>"; };
+		1D105FE6149A1BBE0023D668 /* ASMediaLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASMediaLink.h; sourceTree = "<group>"; };
+		1D105FE7149A1BBE0023D668 /* ASMediaLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASMediaLink.m; sourceTree = "<group>"; };
+		1D105FEC149A1FFF0023D668 /* ASActivityTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASActivityTest.m; sourceTree = "<group>"; };
 		1D586E6A14975EB8004A5E92 /* iSomUPC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSomUPC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D586E6E14975EB8004A5E92 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1D586E7014975EB8004A5E92 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -74,7 +90,6 @@
 		1D586F38149764DC004A5E92 /* UPCiSomUPC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UPCiSomUPC.xib; sourceTree = "<group>"; };
 		1D586F3D14976C9C004A5E92 /* FlurryAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAnalytics.h; sourceTree = "<group>"; };
 		1D586F3E14976C9C004A5E92 /* libFlurryAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurryAnalytics.a; sourceTree = "<group>"; };
-		1D586F4414977174004A5E92 /* UPCKiwiTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCKiwiTest.m; sourceTree = "<group>"; };
 		1D586F461497723F004A5E92 /* libKiwi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKiwi.a; path = "../Kiwi/build/Release-iphoneos/libKiwi.a"; sourceTree = "<group>"; };
 		1D586F4B14977EA9004A5E92 /* libRestKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRestKit.a; path = "../RestKit/build/Release-iphoneos/libRestKit.a"; sourceTree = "<group>"; };
 		1D586F4D14977EB4004A5E92 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -123,6 +138,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D105FD8149A15C10023D668 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				1D105FD9149A15C10023D668 /* activitystreams */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		1D105FD9149A15C10023D668 /* activitystreams */ = {
+			isa = PBXGroup;
+			children = (
+				1D105FDA149A15D80023D668 /* ASObject.h */,
+				1D105FDB149A15D80023D668 /* ASObject.m */,
+				1D105FDD149A15F60023D668 /* ASPerson.h */,
+				1D105FDE149A15F60023D668 /* ASPerson.m */,
+				1D105FE0149A179A0023D668 /* ASNote.h */,
+				1D105FE1149A179B0023D668 /* ASNote.m */,
+				1D105FE3149A192A0023D668 /* ASActivity.h */,
+				1D105FE4149A192A0023D668 /* ASActivity.m */,
+				1D105FE6149A1BBE0023D668 /* ASMediaLink.h */,
+				1D105FE7149A1BBE0023D668 /* ASMediaLink.m */,
+			);
+			path = activitystreams;
+			sourceTree = "<group>";
+		};
+		1D105FE9149A1FE40023D668 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				1D105FEA149A1FE40023D668 /* activitystreams */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		1D105FEA149A1FE40023D668 /* activitystreams */ = {
+			isa = PBXGroup;
+			children = (
+				1D105FEC149A1FFF0023D668 /* ASActivityTest.m */,
+			);
+			path = activitystreams;
+			sourceTree = "<group>";
+		};
 		1D586E5F14975EB8004A5E92 = {
 			isa = PBXGroup;
 			children = (
@@ -208,7 +264,7 @@
 				1D586EB514976099004A5E92 /* controllers */,
 				1D586EBA14976099004A5E92 /* controls */,
 				1D586EBB14976099004A5E92 /* helpers */,
-				1D586EBC14976099004A5E92 /* models */,
+				1D105FD8149A15C10023D668 /* models */,
 				1D586EBD14976099004A5E92 /* views */,
 			);
 			path = classes;
@@ -248,13 +304,6 @@
 				1D586F8E1498AFEC004A5E92 /* UPCActivityTableViewController.m */,
 			);
 			path = helpers;
-			sourceTree = "<group>";
-		};
-		1D586EBC14976099004A5E92 /* models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = models;
 			sourceTree = "<group>";
 		};
 		1D586EBD14976099004A5E92 /* views */ = {
@@ -321,7 +370,7 @@
 		1D586EDA1497619C004A5E92 /* classes */ = {
 			isa = PBXGroup;
 			children = (
-				1D586F4414977174004A5E92 /* UPCKiwiTest.m */,
+				1D105FE9149A1FE40023D668 /* models */,
 			);
 			path = classes;
 			sourceTree = "<group>";
@@ -461,6 +510,11 @@
 				1D586ED9149760CA004A5E92 /* main.m in Sources */,
 				1D586F8C1498AECF004A5E92 /* UPCActivityViewController.m in Sources */,
 				1D586F8F1498AFEC004A5E92 /* UPCActivityTableViewController.m in Sources */,
+				1D105FDC149A15D80023D668 /* ASObject.m in Sources */,
+				1D105FDF149A15F60023D668 /* ASPerson.m in Sources */,
+				1D105FE2149A179B0023D668 /* ASNote.m in Sources */,
+				1D105FE5149A192A0023D668 /* ASActivity.m in Sources */,
+				1D105FE8149A1BBF0023D668 /* ASMediaLink.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,7 +522,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D586F4514977174004A5E92 /* UPCKiwiTest.m in Sources */,
+				1D105FED149A1FFF0023D668 /* ASActivityTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
