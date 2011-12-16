@@ -13,6 +13,8 @@
 		1D105FE5149A192A0023D668 /* ASActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D105FE4149A192A0023D668 /* ASActivity.m */; };
 		1D105FE8149A1BBF0023D668 /* ASMediaLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D105FE7149A1BBE0023D668 /* ASMediaLink.m */; };
 		1D105FED149A1FFF0023D668 /* ASActivityTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D105FEC149A1FFF0023D668 /* ASActivityTest.m */; };
+		1D3F338B149B5DB50032CD09 /* timeline.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D3F338A149B5DB50032CD09 /* timeline.json */; };
+		1D3F338E149B61590032CD09 /* UPCRestKitConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3F338D149B61590032CD09 /* UPCRestKitConfigurator.m */; };
 		1D586E6F14975EB8004A5E92 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586E6E14975EB8004A5E92 /* UIKit.framework */; };
 		1D586E7114975EB8004A5E92 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586E7014975EB8004A5E92 /* Foundation.framework */; };
 		1D586E7314975EB8004A5E92 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586E7214975EB8004A5E92 /* CoreGraphics.framework */; };
@@ -66,6 +68,10 @@
 		1D105FE6149A1BBE0023D668 /* ASMediaLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASMediaLink.h; sourceTree = "<group>"; };
 		1D105FE7149A1BBE0023D668 /* ASMediaLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASMediaLink.m; sourceTree = "<group>"; };
 		1D105FEC149A1FFF0023D668 /* ASActivityTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASActivityTest.m; sourceTree = "<group>"; };
+		1D3F338A149B5DB50032CD09 /* timeline.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = timeline.json; sourceTree = "<group>"; };
+		1D3F338C149B61590032CD09 /* UPCRestKitConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCRestKitConfigurator.h; sourceTree = "<group>"; };
+		1D3F338D149B61590032CD09 /* UPCRestKitConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCRestKitConfigurator.m; sourceTree = "<group>"; };
+		1D3F338F149B61E80032CD09 /* ASActivityStreams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASActivityStreams.h; sourceTree = "<group>"; };
 		1D586E6A14975EB8004A5E92 /* iSomUPC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSomUPC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D586E6E14975EB8004A5E92 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1D586E7014975EB8004A5E92 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -149,6 +155,7 @@
 		1D105FD9149A15C10023D668 /* activitystreams */ = {
 			isa = PBXGroup;
 			children = (
+				1D3F338F149B61E80032CD09 /* ASActivityStreams.h */,
 				1D105FDA149A15D80023D668 /* ASObject.h */,
 				1D105FDB149A15D80023D668 /* ASObject.m */,
 				1D105FDD149A15F60023D668 /* ASPerson.h */,
@@ -177,6 +184,22 @@
 				1D105FEC149A1FFF0023D668 /* ASActivityTest.m */,
 			);
 			path = activitystreams;
+			sourceTree = "<group>";
+		};
+		1D3F3385149B5CC70032CD09 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				1D3F3386149B5CC70032CD09 /* fixtures */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		1D3F3386149B5CC70032CD09 /* fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				1D3F338A149B5DB50032CD09 /* timeline.json */,
+			);
+			path = fixtures;
 			sourceTree = "<group>";
 		};
 		1D586E5F14975EB8004A5E92 = {
@@ -243,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				1D586EDA1497619C004A5E92 /* classes */,
+				1D3F3385149B5CC70032CD09 /* resources */,
 				1D586EA114975EB9004A5E92 /* Supporting Files */,
 			);
 			path = iSomUPCTests;
@@ -302,6 +326,8 @@
 			children = (
 				1D586F8D1498AFEC004A5E92 /* UPCActivityTableViewController.h */,
 				1D586F8E1498AFEC004A5E92 /* UPCActivityTableViewController.m */,
+				1D3F338C149B61590032CD09 /* UPCRestKitConfigurator.h */,
+				1D3F338D149B61590032CD09 /* UPCRestKitConfigurator.m */,
 			);
 			path = helpers;
 			sourceTree = "<group>";
@@ -479,6 +505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D586EE0149761AA004A5E92 /* InfoPlist.strings in Resources */,
+				1D3F338B149B5DB50032CD09 /* timeline.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +542,7 @@
 				1D105FE2149A179B0023D668 /* ASNote.m in Sources */,
 				1D105FE5149A192A0023D668 /* ASActivity.m in Sources */,
 				1D105FE8149A1BBF0023D668 /* ASMediaLink.m in Sources */,
+				1D3F338E149B61590032CD09 /* UPCRestKitConfigurator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,8 +6,8 @@
 //  Copyright (c) 2011 UPCnet. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "RestKit/RestKit.h"
 
-@interface UPCActivityTableViewController : NSObject <UITableViewDataSource, UITableViewDelegate>
+@interface UPCActivityTableViewController : NSObject <UITableViewDataSource, UITableViewDelegate, RKObjectLoaderDelegate>
 
 @end

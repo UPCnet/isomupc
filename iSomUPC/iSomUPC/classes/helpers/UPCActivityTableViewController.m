@@ -7,14 +7,60 @@
 //
 
 #import "UPCActivityTableViewController.h"
+#import "RestKit/RestKit.h"
+#import "ASActivityStreams.h"
+#import "UPCRestKitConfigurator.h"
+
+
+@interface UPCActivityTableViewController ()
+@property (strong, nonatomic) NSArray *timeline;
+@property (strong, nonatomic) UITableView *tableView;
+- (void)refresh;
+@end
+
 
 @implementation UPCActivityTableViewController
+
+#pragma mark - Synthesized properties
+
+@synthesize timeline;
+@synthesize tableView;
+
+#pragma mark - Init and dealloc
+
+- (id)init
+{
+    self = [super init];
+    if (self != nil) 
+    {
+        [self refresh];
+    }
+    return self;
+}
+
+#pragma mark - Web services communication
+
+- (void)refresh
+{
+    [[UPCRestKitConfigurator sharedManager] loadObjectsAtResourcePath:@"/users/jose/timeline" delegate:self]; 
+}
+
+- (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects
+{
+    self.timeline = objects;
+    [self.tableView reloadData];
+}
+
+- (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
+{
+}
 
 #pragma mark - UITableViewDataSource methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 50;
+    self.tableView = tableView;
+    return [self.timeline count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -26,8 +72,10 @@
         timelineCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:TIMELINE_CELL_ID];
     }
     
-    timelineCell.textLabel.text = @"Algo está pasando en mi timeline";
-    timelineCell.detailTextLabel.text = @"Jose - 2011/12/10 18:50";
+    ASActivity *activity = [self.timeline objectAtIndex:indexPath.row];
+    
+    timelineCell.textLabel.text = [activity.verb isEqualToString:@"post"] ? ((ASNote *)activity.object).content : ((ASPerson *)activity.object).displayName;
+    timelineCell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@ - %@", ((ASPerson *)activity.actor).displayName, activity.verb, activity.published];
     
     return timelineCell;
 }
