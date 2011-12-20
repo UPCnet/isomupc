@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EGORefreshTableHeaderView.h"
+#import "RestKit/RestKit.h"
 
-@interface UPCActivityViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UITableView *activityTableView;
+@interface UPCActivityViewController : UITableViewController <EGORefreshTableHeaderDelegate, RKObjectLoaderDelegate>
 
 @end
