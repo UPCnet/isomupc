@@ -15,6 +15,9 @@
 		1D105FED149A1FFF0023D668 /* ASActivityTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D105FEC149A1FFF0023D668 /* ASActivityTest.m */; };
 		1D3F338B149B5DB50032CD09 /* timeline.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D3F338A149B5DB50032CD09 /* timeline.json */; };
 		1D3F338E149B61590032CD09 /* UPCRestKitConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3F338D149B61590032CD09 /* UPCRestKitConfigurator.m */; };
+		1D3F3393149B692C0032CD09 /* timeline.post.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D3F3392149B692B0032CD09 /* timeline.post.json */; };
+		1D3F3397149B69F50032CD09 /* UPCRKJSonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3F3396149B69F50032CD09 /* UPCRKJSonParser.m */; };
+		1D3F339B149B6D9D0032CD09 /* UPCPostActivityMappingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3F339A149B6D9D0032CD09 /* UPCPostActivityMappingTest.m */; };
 		1D586E6F14975EB8004A5E92 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586E6E14975EB8004A5E92 /* UIKit.framework */; };
 		1D586E7114975EB8004A5E92 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586E7014975EB8004A5E92 /* Foundation.framework */; };
 		1D586E7314975EB8004A5E92 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586E7214975EB8004A5E92 /* CoreGraphics.framework */; };
@@ -44,6 +47,10 @@
 		1D586F891498AE22004A5E92 /* UPCActivityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D586F881498AE22004A5E92 /* UPCActivityView.xib */; };
 		1D586F8C1498AECF004A5E92 /* UPCActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D586F8B1498AECF004A5E92 /* UPCActivityViewController.m */; };
 		1D586F8F1498AFEC004A5E92 /* UPCActivityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D586F8E1498AFEC004A5E92 /* UPCActivityTableViewController.m */; };
+		1DC29D4314A0968C00A35D17 /* timeline.post.invalid-date.json in Resources */ = {isa = PBXBuildFile; fileRef = 1DC29D4014A095F300A35D17 /* timeline.post.invalid-date.json */; };
+		1DC29D4614A096FF00A35D17 /* UPCDateMappingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DC29D4514A096FF00A35D17 /* UPCDateMappingTest.m */; };
+		1DC29D4914A0980E00A35D17 /* UPCFollowActivityMappingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DC29D4814A0980E00A35D17 /* UPCFollowActivityMappingTest.m */; };
+		1DC29D4B14A0983E00A35D17 /* timeline.follow.json in Resources */ = {isa = PBXBuildFile; fileRef = 1DC29D4A14A0983E00A35D17 /* timeline.follow.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +79,10 @@
 		1D3F338C149B61590032CD09 /* UPCRestKitConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCRestKitConfigurator.h; sourceTree = "<group>"; };
 		1D3F338D149B61590032CD09 /* UPCRestKitConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCRestKitConfigurator.m; sourceTree = "<group>"; };
 		1D3F338F149B61E80032CD09 /* ASActivityStreams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASActivityStreams.h; sourceTree = "<group>"; };
+		1D3F3392149B692B0032CD09 /* timeline.post.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = timeline.post.json; sourceTree = "<group>"; };
+		1D3F3395149B69F50032CD09 /* UPCRKJSonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCRKJSonParser.h; sourceTree = "<group>"; };
+		1D3F3396149B69F50032CD09 /* UPCRKJSonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCRKJSonParser.m; sourceTree = "<group>"; };
+		1D3F339A149B6D9D0032CD09 /* UPCPostActivityMappingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCPostActivityMappingTest.m; sourceTree = "<group>"; };
 		1D586E6A14975EB8004A5E92 /* iSomUPC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSomUPC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D586E6E14975EB8004A5E92 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1D586E7014975EB8004A5E92 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -109,6 +120,10 @@
 		1D586F8B1498AECF004A5E92 /* UPCActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCActivityViewController.m; sourceTree = "<group>"; };
 		1D586F8D1498AFEC004A5E92 /* UPCActivityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCActivityTableViewController.h; sourceTree = "<group>"; };
 		1D586F8E1498AFEC004A5E92 /* UPCActivityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCActivityTableViewController.m; sourceTree = "<group>"; };
+		1DC29D4014A095F300A35D17 /* timeline.post.invalid-date.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "timeline.post.invalid-date.json"; sourceTree = "<group>"; };
+		1DC29D4514A096FF00A35D17 /* UPCDateMappingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCDateMappingTest.m; sourceTree = "<group>"; };
+		1DC29D4814A0980E00A35D17 /* UPCFollowActivityMappingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCFollowActivityMappingTest.m; sourceTree = "<group>"; };
+		1DC29D4A14A0983E00A35D17 /* timeline.follow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = timeline.follow.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,8 +213,30 @@
 			isa = PBXGroup;
 			children = (
 				1D3F338A149B5DB50032CD09 /* timeline.json */,
+				1D3F3392149B692B0032CD09 /* timeline.post.json */,
+				1DC29D4014A095F300A35D17 /* timeline.post.invalid-date.json */,
+				1DC29D4A14A0983E00A35D17 /* timeline.follow.json */,
 			);
 			path = fixtures;
+			sourceTree = "<group>";
+		};
+		1D3F3394149B69D30032CD09 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1D3F3395149B69F50032CD09 /* UPCRKJSonParser.h */,
+				1D3F3396149B69F50032CD09 /* UPCRKJSonParser.m */,
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
+		1D3F3398149B6D7D0032CD09 /* mappings */ = {
+			isa = PBXGroup;
+			children = (
+				1DC29D4514A096FF00A35D17 /* UPCDateMappingTest.m */,
+				1DC29D4814A0980E00A35D17 /* UPCFollowActivityMappingTest.m */,
+				1D3F339A149B6D9D0032CD09 /* UPCPostActivityMappingTest.m */,
+			);
+			path = mappings;
 			sourceTree = "<group>";
 		};
 		1D586E5F14975EB8004A5E92 = {
@@ -396,6 +433,8 @@
 		1D586EDA1497619C004A5E92 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				1D3F3394149B69D30032CD09 /* helpers */,
+				1D3F3398149B6D7D0032CD09 /* mappings */,
 				1D105FE9149A1FE40023D668 /* models */,
 			);
 			path = classes;
@@ -506,6 +545,9 @@
 			files = (
 				1D586EE0149761AA004A5E92 /* InfoPlist.strings in Resources */,
 				1D3F338B149B5DB50032CD09 /* timeline.json in Resources */,
+				1D3F3393149B692C0032CD09 /* timeline.post.json in Resources */,
+				1DC29D4314A0968C00A35D17 /* timeline.post.invalid-date.json in Resources */,
+				1DC29D4B14A0983E00A35D17 /* timeline.follow.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,6 +593,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D105FED149A1FFF0023D668 /* ASActivityTest.m in Sources */,
+				1D3F3397149B69F50032CD09 /* UPCRKJSonParser.m in Sources */,
+				1D3F339B149B6D9D0032CD09 /* UPCPostActivityMappingTest.m in Sources */,
+				1DC29D4614A096FF00A35D17 /* UPCDateMappingTest.m in Sources */,
+				1DC29D4914A0980E00A35D17 /* UPCFollowActivityMappingTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,10 +15,6 @@
 
 + (void)configureRestKitObjectManager
 {
-    NSDateFormatter *rfc3339DateFormatter = [[NSDateFormatter alloc] init];
-    rfc3339DateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ssZ";
-    [RKObjectMapping setPreferredDateFormatter:rfc3339DateFormatter];
-    
     RKObjectMapping *mediaLinkMapping = [RKObjectMapping mappingForClass:[ASMediaLink class]];
     [mediaLinkMapping mapAttributes:@"url", @"duration", @"height", @"width", nil];
     

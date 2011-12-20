@@ -1,0 +1,13 @@
+{
+    "totalItems": 5, 
+    "items": 
+    [
+     {
+     "object": {"displayName": "victor", "id": "4ee721b7637e0332cb000002", "objectType": "person"}, 
+     "actor": {"displayName": "jose", "id": "4ee72173637e0332cb000000", "objectType": "person"}, 
+     "verb": "follow", 
+     "published": "2011-12-13T14:15:16Z", 
+     "id": "4ee721dd637e0332cb000006"
+     }
+    ]
+}

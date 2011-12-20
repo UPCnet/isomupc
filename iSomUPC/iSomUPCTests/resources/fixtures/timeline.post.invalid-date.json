@@ -1,0 +1,13 @@
+{
+    "totalItems": 1,
+    "items": 
+    [
+     {
+     "object": {"content": "test message", "objectType": "note"}, 
+     "actor": {"displayName": "upcnet", "id": "4ee721b7637e0332cb000002", "objectType": "person"}, 
+     "verb": "post", 
+     "published": "2011-12-13T14:15:16+01:00",
+     "id": "4ee74bb3637e0332cb00000f"
+     } 
+    ]
+}
