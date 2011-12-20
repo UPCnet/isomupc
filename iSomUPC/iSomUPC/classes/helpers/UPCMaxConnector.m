@@ -65,6 +65,7 @@
     if ([objectLoader.resourcePath isEqual:[self timelineResourcePath]] ) 
     {
         _timeline = [NSArray array];
+        _timelineLastUpdate = nil;
         NSDictionary *errorInfo = [NSDictionary dictionaryWithObject:error forKey:@"error"];
         [[NSNotificationCenter defaultCenter] postNotificationName:TIMELINE_REFRESH_ERROR_NOTIFICATION object:self userInfo:errorInfo];
     }

@@ -86,9 +86,15 @@ describe(@"UPCMaxConnector", ^{
         
         context(@"and operation fails", ^{
             __block NSError *error;
+            __block NSArray *previousTimeline;
             
             beforeEach(^{
                 error = [NSError errorWithDomain:@"UPCMax" code:0 userInfo:nil];
+
+                previousTimeline = [NSArray arrayWithObject:@"activity"];
+                RKObjectLoader *previousObjectLoader = [RKObjectLoader mock];
+                [previousObjectLoader stub:@selector(resourcePath) andReturn:@"/users/jose/timeline"];
+                [maxConnector objectLoader:previousObjectLoader didLoadObjects:previousTimeline];
             });
             
             context(@"for current user", ^{
@@ -97,11 +103,13 @@ describe(@"UPCMaxConnector", ^{
                 });
                 
                 it(@"should empty the timeline", ^{
+                    [[maxConnector.timeline shouldNot] beEmpty];
                     [maxConnector objectLoader:objectLoader didFailWithError:error];
                     [[maxConnector.timeline should] beEmpty];
                 });
                 
                 it(@"should empty the date of the last update", ^{
+                    [maxConnector.timelineLastUpdate shouldNotBeNil];
                     [maxConnector objectLoader:objectLoader didFailWithError:error];
                     [maxConnector.timelineLastUpdate shouldBeNil];
                 });
@@ -119,25 +127,13 @@ describe(@"UPCMaxConnector", ^{
                 });
                 
                 it(@"should preserve the existing timeline", ^{
-                    NSArray *existingTimeline = [NSArray array];
-                    RKObjectLoader *previousObjectLoader = [RKObjectLoader mock];
-                    [previousObjectLoader stub:@selector(resourcePath) andReturn:@"/users/jose/timeline"];
-                    [maxConnector objectLoader:previousObjectLoader didLoadObjects:existingTimeline];
-                    
                     [maxConnector objectLoader:objectLoader didFailWithError:error];
-                    
-                    [[maxConnector.timeline should] beIdenticalTo:existingTimeline];
+                    [[maxConnector.timeline should] beIdenticalTo:previousTimeline];
                 });
                 
                 it(@"should preserve the date of the last update", ^{
-                    NSArray *existingTimeline = [NSArray array];
-                    RKObjectLoader *previousObjectLoader = [RKObjectLoader mock];
-                    [previousObjectLoader stub:@selector(resourcePath) andReturn:@"/users/jose/timeline"];
-                    [maxConnector objectLoader:previousObjectLoader didLoadObjects:existingTimeline];
                     NSDate *previousLastUpdateDate = maxConnector.timelineLastUpdate;
-                    
                     [maxConnector objectLoader:objectLoader didFailWithError:error];
-                    
                     [[maxConnector.timelineLastUpdate should] beIdenticalTo:previousLastUpdateDate];
                 });
                 
