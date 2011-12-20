@@ -60,6 +60,9 @@
 		1DC29D5C14A0A03E00A35D17 /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DC29D5414A0A03E00A35D17 /* whiteArrow@2x.png */; };
 		1DC29D6014A0A06E00A35D17 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DC29D5F14A0A06E00A35D17 /* EGORefreshTableHeaderView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1DC29D6214A0A2A700A35D17 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DC29D6114A0A2A700A35D17 /* QuartzCore.framework */; };
+		1DC29D6914A0B0AB00A35D17 /* UPCMaxConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DC29D6814A0B0AB00A35D17 /* UPCMaxConnector.m */; };
+		1DC29D6C14A0B0CD00A35D17 /* UPCMaxNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DC29D6B14A0B0CD00A35D17 /* UPCMaxNotifications.m */; };
+		1DC29D6F14A0D3B000A35D17 /* UPCMaxConnectorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DC29D6E14A0D3AF00A35D17 /* UPCMaxConnectorTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +145,11 @@
 		1DC29D5E14A0A06E00A35D17 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
 		1DC29D5F14A0A06E00A35D17 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
 		1DC29D6114A0A2A700A35D17 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1DC29D6714A0B0AB00A35D17 /* UPCMaxConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCMaxConnector.h; sourceTree = "<group>"; };
+		1DC29D6814A0B0AB00A35D17 /* UPCMaxConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCMaxConnector.m; sourceTree = "<group>"; };
+		1DC29D6A14A0B0CD00A35D17 /* UPCMaxNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCMaxNotifications.h; sourceTree = "<group>"; };
+		1DC29D6B14A0B0CD00A35D17 /* UPCMaxNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCMaxNotifications.m; sourceTree = "<group>"; };
+		1DC29D6E14A0D3AF00A35D17 /* UPCMaxConnectorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCMaxConnectorTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +252,7 @@
 			children = (
 				1D3F3395149B69F50032CD09 /* UPCRKJSonParser.h */,
 				1D3F3396149B69F50032CD09 /* UPCRKJSonParser.m */,
+				1DC29D6E14A0D3AF00A35D17 /* UPCMaxConnectorTest.m */,
 			);
 			path = helpers;
 			sourceTree = "<group>";
@@ -381,6 +390,10 @@
 		1D586EBB14976099004A5E92 /* helpers */ = {
 			isa = PBXGroup;
 			children = (
+				1DC29D6714A0B0AB00A35D17 /* UPCMaxConnector.h */,
+				1DC29D6814A0B0AB00A35D17 /* UPCMaxConnector.m */,
+				1DC29D6A14A0B0CD00A35D17 /* UPCMaxNotifications.h */,
+				1DC29D6B14A0B0CD00A35D17 /* UPCMaxNotifications.m */,
 				1D3F338C149B61590032CD09 /* UPCRestKitConfigurator.h */,
 				1D3F338D149B61590032CD09 /* UPCRestKitConfigurator.m */,
 			);
@@ -637,6 +650,8 @@
 				1D105FE8149A1BBF0023D668 /* ASMediaLink.m in Sources */,
 				1D3F338E149B61590032CD09 /* UPCRestKitConfigurator.m in Sources */,
 				1DC29D6014A0A06E00A35D17 /* EGORefreshTableHeaderView.m in Sources */,
+				1DC29D6914A0B0AB00A35D17 /* UPCMaxConnector.m in Sources */,
+				1DC29D6C14A0B0CD00A35D17 /* UPCMaxNotifications.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,6 +664,7 @@
 				1D3F339B149B6D9D0032CD09 /* UPCPostActivityMappingTest.m in Sources */,
 				1DC29D4614A096FF00A35D17 /* UPCDateMappingTest.m in Sources */,
 				1DC29D4914A0980E00A35D17 /* UPCFollowActivityMappingTest.m in Sources */,
+				1DC29D6F14A0D3B000A35D17 /* UPCMaxConnectorTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

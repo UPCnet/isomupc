@@ -11,6 +11,6 @@
 #import "RestKit/RestKit.h"
 
 
-@interface UPCActivityViewController : UITableViewController <EGORefreshTableHeaderDelegate, RKObjectLoaderDelegate>
+@interface UPCActivityViewController : UITableViewController <EGORefreshTableHeaderDelegate>
 
 @end

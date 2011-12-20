@@ -7,7 +7,8 @@
 //
 
 #import "UPCActivityViewController.h"
-#import "UPCRestKitConfigurator.h"
+#import "UPCMaxConnector.h"
+#import "UPCMaxNotifications.h"
 #import "ASActivityStreams.h"
 
 
@@ -16,8 +17,6 @@
     BOOL reloading;
 }
 @property (strong, nonatomic) EGORefreshTableHeaderView *refreshView;
-@property (strong, nonatomic) NSArray *timeline;
-- (void)refresh;
 @end
 
 
@@ -26,13 +25,26 @@
 #pragma mark - Synthesized properties
 
 @synthesize refreshView;
-@synthesize timeline;
+
+#pragma mark - Notification subscriptions
+
+- (void)subscribeToMaxConnectorEvents
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(timelineRefreshed:) name:TIMELINE_REFRESHED_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(timelineRefreshError:) name:TIMELINE_REFRESH_ERROR_NOTIFICATION object:nil];
+}
+
+- (void)unsubscribeFromMaxConnectorEvents
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self subscribeToMaxConnectorEvents];
     
     // Configure EGOTableViewPullRefresh
     CGRect refreshViewFrame = CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.frame.size.width, self.tableView.bounds.size.height);
@@ -40,14 +52,14 @@
     self.refreshView.delegate = self;
     [self.tableView addSubview:self.refreshView];
     
-    [self refresh];
-    [self.refreshView refreshLastUpdatedDate];
+    // Trigger refresh of timeline to update table view
+    [[UPCMaxConnector sharedMaxConnector] refreshTimeline];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    self.tableView = nil;
+    [self unsubscribeFromMaxConnectorEvents];
     self.refreshView = nil;
 }
 
@@ -63,21 +75,10 @@
     [self.refreshView egoRefreshScrollViewDidEndDragging:scrollView];
 }
 
-- (void)reloadTableData
-{
-    reloading = YES;
-}
-
-- (void)reloadingDone
-{
-    reloading = NO;
-    [self.refreshView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
-}
-
 - (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view
 {
-    [self reloadTableData];
-    [self performSelector:@selector(reloadingDone) withObject:nil afterDelay:3.0];
+    reloading = YES;
+    [[UPCMaxConnector sharedMaxConnector] refreshTimeline];
 }
 
 - (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view
@@ -87,24 +88,22 @@
 
 - (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view
 {
-    return [NSDate date];
+    return [[UPCMaxConnector sharedMaxConnector] timelineLastUpdate];
 }
 
-#pragma mark - Web services communication
-
-- (void)refresh
+- (void)timelineRefreshed:(NSNotification *)notification
 {
-    [[UPCRestKitConfigurator sharedManager] loadObjectsAtResourcePath:@"/users/jose/timeline" delegate:self]; 
-}
-
-- (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects
-{
-    self.timeline = objects;
+    reloading = NO;
+    [self.refreshView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
     [self.tableView reloadData];
 }
 
-- (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
+- (void)timelineRefreshError:(NSNotification *)notification
 {
+    reloading = NO;
+    [self.refreshView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
+    [self.tableView reloadData];
+    //TODO: Show error
 }
 
 #pragma mark - UITableViewDataSource methods
@@ -112,7 +111,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     self.tableView = tableView;
-    return [self.timeline count];
+    return [[UPCMaxConnector sharedMaxConnector].timeline count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -124,7 +123,7 @@
         timelineCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:TIMELINE_CELL_ID];
     }
     
-    ASActivity *activity = [self.timeline objectAtIndex:indexPath.row];
+    ASActivity *activity = [[UPCMaxConnector sharedMaxConnector].timeline objectAtIndex:indexPath.row];
     
     timelineCell.textLabel.text = [activity.verb isEqualToString:@"post"] ? ((ASNote *)activity.object).content : ((ASPerson *)activity.object).displayName;
     timelineCell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@ - %@", ((ASPerson *)activity.actor).displayName, activity.verb, activity.published];
