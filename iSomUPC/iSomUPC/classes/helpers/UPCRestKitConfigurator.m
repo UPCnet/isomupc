@@ -15,6 +15,12 @@
 
 + (void)configureRestKitObjectManager
 {
+    NSDateFormatter *rfc3339DateFormatter = [[NSDateFormatter alloc] init];
+    rfc3339DateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+    rfc3339DateFormatter.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+    rfc3339DateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
+    [RKObjectMapping setPreferredDateFormatter:rfc3339DateFormatter];
+    
     RKObjectMapping *mediaLinkMapping = [RKObjectMapping mappingForClass:[ASMediaLink class]];
     [mediaLinkMapping mapAttributes:@"url", @"duration", @"height", @"width", nil];
     
@@ -41,8 +47,18 @@
     [activityMapping mapRelationship:@"generator" withMapping:objectDynamicMapping];
     [activityMapping mapRelationship:@"provider" withMapping:objectDynamicMapping];
     
+    // ActivityStreams object serialization
+    RKObjectMapping *personSerialization = [personMapping inverseMapping];
+    RKObjectMapping *noteSerialization = [noteMapping inverseMapping];
+    
+    // ActivityStreams activity serialization
+    RKObjectMapping *activitySerialization = [RKObjectMapping serializationMapping];
+    [activitySerialization mapAttributes:@"id", @"published", @"verb", @"updated", @"url", @"title", @"content", nil];
+    
     RKObjectManager *manager = [RKObjectManager objectManagerWithBaseURL:@"http://max.beta.upcnet.es"];
     [manager.mappingProvider setMapping:activityMapping forKeyPath:@"items"];
+    [manager.mappingProvider setSerializationMapping:activitySerialization forClass:[ASActivity class]];
+    manager.serializationMIMEType = RKMIMETypeJSON;
     
     // Route mapping
     [manager.router routeClass:[ASActivity class] toResourcePath:@"/people/:actor.displayName/activities" forMethod:RKRequestMethodPOST];
