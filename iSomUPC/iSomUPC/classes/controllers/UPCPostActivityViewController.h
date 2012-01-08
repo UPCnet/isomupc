@@ -13,6 +13,7 @@
 @interface UPCPostActivityViewController : UIViewController <UITextViewDelegate, RKObjectLoaderDelegate>
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *postActivityButton;
+@property (strong, nonatomic) IBOutlet UITextView *activityTextView;
 
 - (IBAction)cancelActivityPosting:(id)sender;
 - (IBAction)postActivity:(id)sender;

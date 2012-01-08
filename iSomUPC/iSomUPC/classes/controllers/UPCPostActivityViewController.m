@@ -7,14 +7,31 @@
 //
 
 #import "UPCPostActivityViewController.h"
+#import "UPCPostActivityViewNotifications.h"
+
+
+#pragma mark - Class implementation
 
 @implementation UPCPostActivityViewController
 
 #pragma mark - Synthesized properties
 
 @synthesize postActivityButton;
+@synthesize activityTextView;
+
+#pragma mark - Init and dealloc
+
+- (id)init
+{
+    return [super initWithNibName:@"UPCPostActivityView" bundle:nil];
+}
 
 #pragma mark - View lifecycle
+
+- (void)viewDidLoad
+{
+    [self.activityTextView becomeFirstResponder];
+}
 
 - (void)viewDidUnload
 {
@@ -33,12 +50,12 @@
 
 - (IBAction)cancelActivityPosting:(id)sender
 {
-    NSLog(@"Cancel activity posting");
+    [[NSNotificationCenter defaultCenter] postNotificationName:ACTIVITY_POSTING_CANCELLED object:self];
 }
 
 - (IBAction)postActivity:(id)sender
 {
-    NSLog(@"Post activity");
+    [[NSNotificationCenter defaultCenter] postNotificationName:ACTIVITY_POSTING_REQUESTED object:self];
 }
 
 #pragma mark - Object loader delegate: hanlde result of post operation
