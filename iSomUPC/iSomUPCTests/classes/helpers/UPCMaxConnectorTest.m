@@ -40,7 +40,7 @@ describe(@"UPCMaxConnector", ^{
             
             context(@"for current user", ^{
                 beforeEach(^{
-                    [objectLoader stub:@selector(resourcePath) andReturn:@"/users/jose/timeline"];
+                    [objectLoader stub:@selector(resourcePath) andReturn:@"/people/jose/timeline"];
                 });
                 
                 it(@"should store the received timeline", ^{
@@ -64,7 +64,7 @@ describe(@"UPCMaxConnector", ^{
             
             context(@"for another user", ^{
                 beforeEach(^{
-                    [objectLoader stub:@selector(resourcePath) andReturn:@"/users/victor/timeline"];
+                    [objectLoader stub:@selector(resourcePath) andReturn:@"/people/victor/timeline"];
                 });
                 
                 it(@"should ignore the received timeline", ^{
@@ -93,13 +93,13 @@ describe(@"UPCMaxConnector", ^{
 
                 previousTimeline = [NSArray arrayWithObject:@"activity"];
                 RKObjectLoader *previousObjectLoader = [RKObjectLoader mock];
-                [previousObjectLoader stub:@selector(resourcePath) andReturn:@"/users/jose/timeline"];
+                [previousObjectLoader stub:@selector(resourcePath) andReturn:@"/people/jose/timeline"];
                 [maxConnector objectLoader:previousObjectLoader didLoadObjects:previousTimeline];
             });
             
             context(@"for current user", ^{
                 beforeEach(^{
-                    [objectLoader stub:@selector(resourcePath) andReturn:@"/users/jose/timeline"];
+                    [objectLoader stub:@selector(resourcePath) andReturn:@"/people/jose/timeline"];
                 });
                 
                 it(@"should empty the timeline", ^{
@@ -123,7 +123,7 @@ describe(@"UPCMaxConnector", ^{
             
             context(@"for another user", ^{
                 beforeEach(^{
-                    [objectLoader stub:@selector(resourcePath) andReturn:@"/users/victor/timeline"];
+                    [objectLoader stub:@selector(resourcePath) andReturn:@"/people/victor/timeline"];
                 });
                 
                 it(@"should preserve the existing timeline", ^{
