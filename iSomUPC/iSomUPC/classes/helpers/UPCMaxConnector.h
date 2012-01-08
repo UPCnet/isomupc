@@ -18,6 +18,7 @@
 
 + (UPCMaxConnector *)sharedMaxConnector;
 
+- (NSString *)authenticatedUser;
 - (void)refreshTimeline;
 - (void)refreshActivities;
 

@@ -38,14 +38,14 @@
 
 #pragma mark - Resource path generation
 
-- (NSString *)currentUser
+- (NSString *)authenticatedUser
 {
     return @"jose"; //TODO: Change for a proper implementation
 }
 
 - (NSString *)timelineResourcePath
 {
-    return [NSString stringWithFormat:TIMELINE_RESOURCE_PATH_TEMPLATE, [self currentUser]];
+    return [NSString stringWithFormat:TIMELINE_RESOURCE_PATH_TEMPLATE, [self authenticatedUser]];
 }
 
 #pragma mark - Data refresh methods

@@ -7,7 +7,10 @@
 //
 
 #import "UPCPostActivityViewController.h"
+#import "UPCMaxConnector.h"
+#import "UPCRestKitConfigurator.h"
 #import "UPCPostActivityViewNotifications.h"
+#import "ASActivityStreams.h"
 
 
 #pragma mark - Class implementation
@@ -55,6 +58,15 @@
 
 - (IBAction)postActivity:(id)sender
 {
+    ASPerson *user = [[ASPerson alloc] init];
+    user.displayName = [[UPCMaxConnector sharedMaxConnector] authenticatedUser];
+    ASNote *note = [[ASNote alloc] init];
+    note.content = self.activityTextView.text;
+    ASActivity *activity = [[ASActivity alloc] init];
+    activity.verb = @"post";
+    activity.actor = user;
+    activity.object = note;
+    [[UPCRestKitConfigurator sharedManager] postObject:activity delegate:self];
     [[NSNotificationCenter defaultCenter] postNotificationName:ACTIVITY_POSTING_REQUESTED object:self];
 }
 
@@ -62,10 +74,12 @@
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects
 {
+    [[NSNotificationCenter defaultCenter] postNotificationName:ACTIVITY_POSTING_SUCCEEDED object:self];
 }
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
 {
+    [[NSNotificationCenter defaultCenter] postNotificationName:ACTIVITY_POSTING_FAILED object:self];
 }
 
 @end
