@@ -43,6 +43,10 @@
     
     RKObjectManager *manager = [RKObjectManager objectManagerWithBaseURL:@"http://max.beta.upcnet.es"];
     [manager.mappingProvider setMapping:activityMapping forKeyPath:@"items"];
+    
+    // Route mapping
+    [manager.router routeClass:[ASActivity class] toResourcePath:@"/people/:actor.displayName/activities" forMethod:RKRequestMethodPOST];
+    [manager.router routeClass:[ASActivity class] toResourcePath:@"/activities/:id"];
 }
 
 + (RKObjectManager *)sharedManager
