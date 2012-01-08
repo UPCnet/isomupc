@@ -10,7 +10,7 @@
 #import "UPCMaxNotifications.h"
 #import "UPCRestKitConfigurator.h"
 
-#define TIMELINE_RESOURCE_PATH_TEMPLATE @"/users/%@/timeline"
+#define TIMELINE_RESOURCE_PATH_TEMPLATE @"/people/%@/timeline"
 
 
 @implementation UPCMaxConnector
