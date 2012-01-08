@@ -7,6 +7,7 @@
 //
 
 #import "UPCTimelineNavigationController.h"
+#import "UPCMaxConnector.h"
 #import "UPCPostActivityViewController.h"
 #import "UPCPostActivityViewNotifications.h"
 
@@ -63,6 +64,7 @@
 
 - (void) activityPostingSucceeded:(NSNotification *)notification
 {
+    [[UPCMaxConnector sharedMaxConnector] refreshTimeline];
 }
 
 - (void) activityPostingFailed:(NSNotification *)notification
