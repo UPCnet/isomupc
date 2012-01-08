@@ -17,4 +17,9 @@
 @synthesize published;
 @synthesize updated;
 
+- (NSString *)objectType
+{
+    return @"person";
+}
+
 @end

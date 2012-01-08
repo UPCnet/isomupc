@@ -39,6 +39,9 @@ describe(@"ActivityStreams serialization mapping", ^{
             RKObjectMapping *serializationMapping = [provider serializationMappingForClass:[ASActivity class]];
             RKObjectSerializer *serializer = [RKObjectSerializer serializerWithObject:activity mapping:serializationMapping];
             parsedActivity = [serializer serializedObject:&serializationError];
+            
+            NSError *error;
+            NSLog(@"JSON result:\n %@", [serializer serializedObjectForMIMEType:@"application/json" error:&error]);
         });
         
         it(@"should have serialized the activity as a dictionary", ^{
@@ -56,6 +59,21 @@ describe(@"ActivityStreams serialization mapping", ^{
             [[[parsedActivity objectForKey:@"verb"] should] equal:activity.verb];
             [[[parsedActivity objectForKey:@"published"] should] equal:[rfc3339DateFormatter stringFromDate:activity.published]];
             [[[parsedActivity objectForKey:@"id"] should] equal:activity.id];
+        });
+        
+        it(@"should have correctly serialized the activity's object", ^{
+            NSDictionary *parsedObject = [parsedActivity objectForKey:@"object"];
+            [parsedObject shouldNotBeNil];
+            [[[parsedObject objectForKey:@"content"] should] equal:((ASNote *)activity.object).content];
+            [[[parsedObject objectForKey:@"objectType"] should] equal:@"note"];
+        });
+        
+        it(@"should have correctly serialized the activity's actor", ^{
+            NSDictionary *parsedActor = [parsedActivity objectForKey:@"actor"];
+            [parsedActor shouldNotBeNil];
+            [[[parsedActor objectForKey:@"id"] should] equal:((ASPerson *)activity.actor).id];
+            [[[parsedActor objectForKey:@"displayName"] should] equal:((ASPerson *)activity.actor).displayName];
+            [[[parsedActor objectForKey:@"objectType"] should] equal:@"person"];
         });
     });
 });

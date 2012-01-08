@@ -8,4 +8,6 @@
 
 @interface ASObject : NSObject
 
+@property (strong, readonly) NSString *objectType;
+
 @end

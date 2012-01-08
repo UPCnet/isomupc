@@ -49,11 +49,14 @@
     
     // ActivityStreams object serialization
     RKObjectMapping *personSerialization = [personMapping inverseMapping];
+    [personSerialization mapAttributes:@"objectType", nil];
     RKObjectMapping *noteSerialization = [noteMapping inverseMapping];
+    [noteSerialization mapAttributes:@"objectType", nil];
     
     // ActivityStreams activity serialization
-    RKObjectMapping *activitySerialization = [RKObjectMapping serializationMapping];
-    [activitySerialization mapAttributes:@"id", @"published", @"verb", @"updated", @"url", @"title", @"content", nil];
+    RKObjectMapping *activitySerialization = [activityMapping inverseMapping];
+    [activitySerialization mapRelationship:@"actor" withMapping:personSerialization];
+    [activitySerialization mapRelationship:@"object" withMapping:noteSerialization];
     
     RKObjectManager *manager = [RKObjectManager objectManagerWithBaseURL:@"http://max.beta.upcnet.es"];
     [manager.mappingProvider setMapping:activityMapping forKeyPath:@"items"];
