@@ -10,4 +10,6 @@
 
 @interface UPCTimelineNavigationController : UINavigationController
 
+- (IBAction)newActivity:(id)sender;
+
 @end
