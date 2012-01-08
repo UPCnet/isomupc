@@ -15,6 +15,7 @@
 		1D105FED149A1FFF0023D668 /* ASActivityTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D105FEC149A1FFF0023D668 /* ASActivityTest.m */; };
 		1D26416314B9CB8C0094728F /* UPCPostActivityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D26416214B9CB8C0094728F /* UPCPostActivityView.xib */; };
 		1D26416714B9CD1D0094728F /* UPCPostActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D26416614B9CD1D0094728F /* UPCPostActivityViewController.m */; };
+		1D26416A14B9DB4E0094728F /* UPCTimelineNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D26416914B9DB4D0094728F /* UPCTimelineNavigationController.m */; };
 		1D3F338B149B5DB50032CD09 /* timeline.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D3F338A149B5DB50032CD09 /* timeline.json */; };
 		1D3F338E149B61590032CD09 /* UPCRestKitConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3F338D149B61590032CD09 /* UPCRestKitConfigurator.m */; };
 		1D3F3393149B692C0032CD09 /* timeline.post.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D3F3392149B692B0032CD09 /* timeline.post.json */; };
@@ -92,6 +93,8 @@
 		1D26416214B9CB8C0094728F /* UPCPostActivityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UPCPostActivityView.xib; sourceTree = "<group>"; };
 		1D26416514B9CD1C0094728F /* UPCPostActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCPostActivityViewController.h; sourceTree = "<group>"; };
 		1D26416614B9CD1D0094728F /* UPCPostActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCPostActivityViewController.m; sourceTree = "<group>"; };
+		1D26416814B9DB4D0094728F /* UPCTimelineNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCTimelineNavigationController.h; sourceTree = "<group>"; };
+		1D26416914B9DB4D0094728F /* UPCTimelineNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCTimelineNavigationController.m; sourceTree = "<group>"; };
 		1D3F338A149B5DB50032CD09 /* timeline.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = timeline.json; sourceTree = "<group>"; };
 		1D3F338C149B61590032CD09 /* UPCRestKitConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCRestKitConfigurator.h; sourceTree = "<group>"; };
 		1D3F338D149B61590032CD09 /* UPCRestKitConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCRestKitConfigurator.m; sourceTree = "<group>"; };
@@ -383,6 +386,8 @@
 				1D586F8B1498AECF004A5E92 /* UPCActivityViewController.m */,
 				1D26416514B9CD1C0094728F /* UPCPostActivityViewController.h */,
 				1D26416614B9CD1D0094728F /* UPCPostActivityViewController.m */,
+				1D26416814B9DB4D0094728F /* UPCTimelineNavigationController.h */,
+				1D26416914B9DB4D0094728F /* UPCTimelineNavigationController.m */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -662,6 +667,7 @@
 				1DC29D6914A0B0AB00A35D17 /* UPCMaxConnector.m in Sources */,
 				1DC29D6C14A0B0CD00A35D17 /* UPCMaxNotifications.m in Sources */,
 				1D26416714B9CD1D0094728F /* UPCPostActivityViewController.m in Sources */,
+				1D26416A14B9DB4E0094728F /* UPCTimelineNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
