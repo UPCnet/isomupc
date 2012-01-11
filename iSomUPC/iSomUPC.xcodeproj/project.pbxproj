@@ -68,6 +68,7 @@
 		1DC29D6914A0B0AB00A35D17 /* UPCMaxConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DC29D6814A0B0AB00A35D17 /* UPCMaxConnector.m */; };
 		1DC29D6C14A0B0CD00A35D17 /* UPCMaxNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DC29D6B14A0B0CD00A35D17 /* UPCMaxNotifications.m */; };
 		1DC29D6F14A0D3B000A35D17 /* UPCMaxConnectorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DC29D6E14A0D3AF00A35D17 /* UPCMaxConnectorTest.m */; };
+		1DDC60A514BD89F800A6C6A1 /* ASComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDC60A414BD89F800A6C6A1 /* ASComment.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +164,8 @@
 		1DC29D6A14A0B0CD00A35D17 /* UPCMaxNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCMaxNotifications.h; sourceTree = "<group>"; };
 		1DC29D6B14A0B0CD00A35D17 /* UPCMaxNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCMaxNotifications.m; sourceTree = "<group>"; };
 		1DC29D6E14A0D3AF00A35D17 /* UPCMaxConnectorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCMaxConnectorTest.m; sourceTree = "<group>"; };
+		1DDC60A314BD89F800A6C6A1 /* ASComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASComment.h; sourceTree = "<group>"; };
+		1DDC60A414BD89F800A6C6A1 /* ASComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASComment.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,17 +213,19 @@
 		1D105FD9149A15C10023D668 /* activitystreams */ = {
 			isa = PBXGroup;
 			children = (
+				1D105FE3149A192A0023D668 /* ASActivity.h */,
+				1D105FE4149A192A0023D668 /* ASActivity.m */,
 				1D3F338F149B61E80032CD09 /* ASActivityStreams.h */,
+				1DDC60A314BD89F800A6C6A1 /* ASComment.h */,
+				1DDC60A414BD89F800A6C6A1 /* ASComment.m */,
+				1D105FE6149A1BBE0023D668 /* ASMediaLink.h */,
+				1D105FE7149A1BBE0023D668 /* ASMediaLink.m */,
+				1D105FE0149A179A0023D668 /* ASNote.h */,
+				1D105FE1149A179B0023D668 /* ASNote.m */,
 				1D105FDA149A15D80023D668 /* ASObject.h */,
 				1D105FDB149A15D80023D668 /* ASObject.m */,
 				1D105FDD149A15F60023D668 /* ASPerson.h */,
 				1D105FDE149A15F60023D668 /* ASPerson.m */,
-				1D105FE0149A179A0023D668 /* ASNote.h */,
-				1D105FE1149A179B0023D668 /* ASNote.m */,
-				1D105FE3149A192A0023D668 /* ASActivity.h */,
-				1D105FE4149A192A0023D668 /* ASActivity.m */,
-				1D105FE6149A1BBE0023D668 /* ASMediaLink.h */,
-				1D105FE7149A1BBE0023D668 /* ASMediaLink.m */,
 			);
 			path = activitystreams;
 			sourceTree = "<group>";
@@ -677,6 +682,7 @@
 				1D26416714B9CD1D0094728F /* UPCPostActivityViewController.m in Sources */,
 				1D26416A14B9DB4E0094728F /* UPCTimelineNavigationController.m in Sources */,
 				1D26416D14B9E2C10094728F /* UPCPostActivityViewNotifications.m in Sources */,
+				1DDC60A514BD89F800A6C6A1 /* ASComment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
