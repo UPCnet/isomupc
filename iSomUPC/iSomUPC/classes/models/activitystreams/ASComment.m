@@ -18,4 +18,9 @@
 @synthesize published;
 @synthesize updated;
 
+- (NSString *)objectType
+{
+    return @"comment";
+}
+
 @end
