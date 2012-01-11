@@ -1,0 +1,13 @@
+{
+    "totalItems" : 1,
+    "items" : 
+    [ 
+     {
+     "object" : { "content" : "Test comment", "inReplyTo" : [ { "id" : "4f0a1cd3637e035619000008", "objectType" : "note" } ], "objectType" : "comment" },
+     "actor" : { "displayName" : "jose", "id" : "4ef5d298637e03180f000000", "objectType" : "person" },
+     "verb" : "post",
+     "published" : "2011-12-13T14:15:16Z",
+     "id" : "4f0ac8a7637e0365f1000000"
+     }
+    ]
+}

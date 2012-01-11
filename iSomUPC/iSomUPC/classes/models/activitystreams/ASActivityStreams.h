@@ -10,4 +10,5 @@
 #import "ASActivity.h"
 #import "ASPerson.h"
 #import "ASNote.h"
+#import "ASComment.h"
 #import "ASMediaLink.h"

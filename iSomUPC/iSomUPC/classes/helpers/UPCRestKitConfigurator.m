@@ -27,6 +27,9 @@
     // ActivityStreams object mapping
     RKDynamicObjectMapping *objectDynamicMapping = [RKDynamicObjectMapping dynamicMapping];
     
+    RKObjectMapping *objectMapping = [RKObjectMapping mappingForClass:[ASObject class]];
+    [objectMapping mapAttributes:@"id", nil];
+    
     RKObjectMapping *personMapping = [RKObjectMapping mappingForClass:[ASPerson class]];
     [personMapping mapAttributes:@"id", @"displayName", @"image", @"url", @"published", @"updated", nil];
     
@@ -34,8 +37,14 @@
     [noteMapping mapAttributes:@"id", @"content", @"url", @"published", @"updated", nil];
     [noteMapping mapRelationship:@"author" withMapping:objectDynamicMapping];
     
+    RKObjectMapping *commentMapping = [RKObjectMapping mappingForClass:[ASComment class]];
+    [commentMapping mapAttributes:@"id", @"displayName", @"content", @"published", @"updated", nil];
+    [commentMapping mapRelationship:@"author" withMapping:objectDynamicMapping];
+    [commentMapping mapRelationship:@"inReplyTo" withMapping:objectDynamicMapping];
+    
     [objectDynamicMapping setObjectMapping:personMapping whenValueOfKeyPath:@"objectType" isEqualTo:@"person"];
     [objectDynamicMapping setObjectMapping:noteMapping whenValueOfKeyPath:@"objectType" isEqualTo:@"note"];
+    [objectDynamicMapping setObjectMapping:commentMapping whenValueOfKeyPath:@"objectType" isEqualTo:@"comment"];
     
     // ActivityStreams activity mapping
     RKObjectMapping *activityMapping = [RKObjectMapping mappingForClass:[ASActivity class]];

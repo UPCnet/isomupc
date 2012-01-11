@@ -69,6 +69,8 @@
 		1DC29D6C14A0B0CD00A35D17 /* UPCMaxNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DC29D6B14A0B0CD00A35D17 /* UPCMaxNotifications.m */; };
 		1DC29D6F14A0D3B000A35D17 /* UPCMaxConnectorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DC29D6E14A0D3AF00A35D17 /* UPCMaxConnectorTest.m */; };
 		1DDC60A514BD89F800A6C6A1 /* ASComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDC60A414BD89F800A6C6A1 /* ASComment.m */; };
+		1DDC60A814BDB1F500A6C6A1 /* timeline.comment.json in Resources */ = {isa = PBXBuildFile; fileRef = 1DDC60A714BDB1F500A6C6A1 /* timeline.comment.json */; };
+		1DDC60AB14BDB34800A6C6A1 /* UPCCommentActivityMappingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDC60AA14BDB34800A6C6A1 /* UPCCommentActivityMappingTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,6 +168,8 @@
 		1DC29D6E14A0D3AF00A35D17 /* UPCMaxConnectorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCMaxConnectorTest.m; sourceTree = "<group>"; };
 		1DDC60A314BD89F800A6C6A1 /* ASComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASComment.h; sourceTree = "<group>"; };
 		1DDC60A414BD89F800A6C6A1 /* ASComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASComment.m; sourceTree = "<group>"; };
+		1DDC60A714BDB1F500A6C6A1 /* timeline.comment.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = timeline.comment.json; sourceTree = "<group>"; };
+		1DDC60AA14BDB34800A6C6A1 /* UPCCommentActivityMappingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCCommentActivityMappingTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,10 +261,11 @@
 		1D3F3386149B5CC70032CD09 /* fixtures */ = {
 			isa = PBXGroup;
 			children = (
-				1D3F338A149B5DB50032CD09 /* timeline.json */,
-				1D3F3392149B692B0032CD09 /* timeline.post.json */,
-				1DC29D4014A095F300A35D17 /* timeline.post.invalid-date.json */,
+				1DDC60A714BDB1F500A6C6A1 /* timeline.comment.json */,
 				1DC29D4A14A0983E00A35D17 /* timeline.follow.json */,
+				1D3F338A149B5DB50032CD09 /* timeline.json */,
+				1DC29D4014A095F300A35D17 /* timeline.post.invalid-date.json */,
+				1D3F3392149B692B0032CD09 /* timeline.post.json */,
 			);
 			path = fixtures;
 			sourceTree = "<group>";
@@ -278,6 +283,7 @@
 		1D3F3398149B6D7D0032CD09 /* mappings */ = {
 			isa = PBXGroup;
 			children = (
+				1DDC60AA14BDB34800A6C6A1 /* UPCCommentActivityMappingTest.m */,
 				1DC29D4514A096FF00A35D17 /* UPCDateMappingTest.m */,
 				1DC29D4814A0980E00A35D17 /* UPCFollowActivityMappingTest.m */,
 				1D3F339A149B6D9D0032CD09 /* UPCPostActivityMappingTest.m */,
@@ -640,6 +646,7 @@
 				1D3F3393149B692C0032CD09 /* timeline.post.json in Resources */,
 				1DC29D4314A0968C00A35D17 /* timeline.post.invalid-date.json in Resources */,
 				1DC29D4B14A0983E00A35D17 /* timeline.follow.json in Resources */,
+				1DDC60A814BDB1F500A6C6A1 /* timeline.comment.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -697,6 +704,7 @@
 				1DC29D4914A0980E00A35D17 /* UPCFollowActivityMappingTest.m in Sources */,
 				1DC29D6F14A0D3B000A35D17 /* UPCMaxConnectorTest.m in Sources */,
 				1D26417014B9FAD40094728F /* UPCPostActivitySerializationMappingTest.m in Sources */,
+				1DDC60AB14BDB34800A6C6A1 /* UPCCommentActivityMappingTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
