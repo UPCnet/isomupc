@@ -10,7 +10,6 @@
 
 @interface ASNote : ASObject
 
-@property (strong, nonatomic) NSString *id;
 @property (strong, nonatomic) ASObject *author;
 @property (strong, nonatomic) NSString *content;
 @property (strong, nonatomic) NSString *url;

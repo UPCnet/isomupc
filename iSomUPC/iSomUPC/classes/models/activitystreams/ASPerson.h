@@ -10,7 +10,6 @@
 
 @interface ASPerson : ASObject
 
-@property (strong, nonatomic) NSString *id;
 @property (strong, nonatomic) NSString *displayName;
 @property (strong, nonatomic) NSString *image;
 @property (strong, nonatomic) NSString *url;

@@ -11,7 +11,6 @@
 
 @implementation ASComment
 
-@synthesize id;
 @synthesize author;
 @synthesize displayName;
 @synthesize content;

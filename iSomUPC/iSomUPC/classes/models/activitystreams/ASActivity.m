@@ -12,8 +12,6 @@
 
 #pragma mark - Synthesized properties
 
-@synthesize id;
-
 @synthesize actor;
 @synthesize published;
 @synthesize verb;

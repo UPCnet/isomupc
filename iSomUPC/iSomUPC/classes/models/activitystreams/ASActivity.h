@@ -11,8 +11,6 @@
 
 @interface ASActivity : ASObject
 
-@property (strong, nonatomic) NSString *id;
-
 @property (strong, nonatomic) ASObject *actor;
 @property (strong, nonatomic) NSDate *published;
 @property (strong, nonatomic) NSString *verb;

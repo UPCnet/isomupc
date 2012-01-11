@@ -10,6 +10,7 @@
 
 @implementation ASObject
 
+@synthesize id;
 @synthesize objectType;
 
 @end

@@ -10,7 +10,6 @@
 
 @implementation ASNote
 
-@synthesize id;
 @synthesize author;
 @synthesize content;
 @synthesize url;

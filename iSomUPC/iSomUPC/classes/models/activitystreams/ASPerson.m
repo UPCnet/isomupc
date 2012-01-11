@@ -10,7 +10,6 @@
 
 @implementation ASPerson
 
-@synthesize id;
 @synthesize displayName;
 @synthesize image;
 @synthesize url;
