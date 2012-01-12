@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RestKit/RestKit.h"
 #import "ASActivityStreams.h"
 
 
-@interface UPCActivityViewController : UIViewController
+@interface UPCActivityViewController : UIViewController <RKObjectLoaderDelegate>
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UILabel *userLabel;

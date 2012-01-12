@@ -7,12 +7,20 @@
 //
 
 #import "UPCActivityViewController.h"
+#import "UPCRestKitConfigurator.h"
+#import "UPCPostCommentViewController.h"
+#import "UPCPostCommentViewNotifications.h"
 
 
 #pragma mark - Class extension
 
 @interface UPCActivityViewController ()
 @property (strong, nonatomic) ASActivity *activity;
+- (void)newComment:(id)sender;
+- (void) commentPostingCancelled:(NSNotification *)notification;
+- (void) commentPostingRequested:(NSNotification *)notification;
+- (void) commentPostingSucceeded:(NSNotification *)notification;
+- (void) commentPostingFailed:(NSNotification *)notification;
 @end
 
 
@@ -50,30 +58,77 @@
         dateFormatter = [[NSDateFormatter alloc] init];
         dateFormatter.dateStyle = NSDateFormatterMediumStyle;
     }
-    
-    self.navigationItem.title = @"Activity";
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(comment:)];
-    
+
     [super viewDidLoad];
+    
+    self.navigationItem.title = @"Actividad";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(newComment:)];
+    
     self.userLabel.text = ((ASPerson *)self.activity.actor).displayName;
     self.dateLabel.text = [dateFormatter stringFromDate:self.activity.published];
     self.activityContentLabel.text = [NSString stringWithFormat:@"%@", self.activity];
     [self.activityContentLabel sizeToFit];
     
     self.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, self.activityContentLabel.frame.origin.y + self.activityContentLabel.frame.size.height + 18);
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(commentPostingCancelled:) name:COMMENT_POSTING_CANCELLED object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(commentPostingRequested:) name:COMMENT_POSTING_REQUESTED object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(commentPostingSucceeded:) name:COMMENT_POSTING_SUCCEEDED object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(commentPostingFailed:) name:COMMENT_POSTING_FAILED object:nil];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:COMMENT_POSTING_CANCELLED object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:COMMENT_POSTING_REQUESTED object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:COMMENT_POSTING_SUCCEEDED object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:COMMENT_POSTING_FAILED object:nil];
+
     self.scrollView = nil;
     self.dateLabel = nil;
     self.activityContentLabel = nil;
 }
 
-- (void)comment:(id)sender
+#pragma mark Comment loading
+
+- (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects
 {
-    NSLog(@"Comment button tapped");
+    NSLog(@"TODO: Show comments in interface");
+}
+
+- (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
+{
+    NSLog(@"TODO: Show error while retreiving comments: %@", error);
+}
+
+#pragma mark Event management
+
+- (void)newComment:(id)sender
+{
+    UPCPostCommentViewController *postCommentViewController = [[UPCPostCommentViewController alloc] initWithActivity:self.activity];
+    [self presentModalViewController:postCommentViewController animated:YES];
+}
+
+- (void) commentPostingCancelled:(NSNotification *)notification
+{
+    [self.presentedViewController dismissModalViewControllerAnimated:YES];
+}
+
+- (void) commentPostingRequested:(NSNotification *)notification
+{
+    [self.presentedViewController dismissModalViewControllerAnimated:YES];
+}
+
+- (void) commentPostingSucceeded:(NSNotification *)notification
+{
+    NSLog(@"TODO: Refresh comment list");
+}
+
+- (void) commentPostingFailed:(NSNotification *)notification
+{
+    NSLog(@"TODO: Show error message");
 }
 
 @end
