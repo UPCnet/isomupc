@@ -77,6 +77,8 @@
 		1DDC60A814BDB1F500A6C6A1 /* timeline.comment.json in Resources */ = {isa = PBXBuildFile; fileRef = 1DDC60A714BDB1F500A6C6A1 /* timeline.comment.json */; };
 		1DDC60AB14BDB34800A6C6A1 /* UPCCommentActivityMappingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDC60AA14BDB34800A6C6A1 /* UPCCommentActivityMappingTest.m */; };
 		1DFCCD4314BEFA1200F35F9D /* UPCTimelineViewNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFCCD4214BEFA1200F35F9D /* UPCTimelineViewNotifications.m */; };
+		1DFCCD5314BF016100F35F9D /* UPCCommentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DFCCD5214BF016100F35F9D /* UPCCommentView.xib */; };
+		1DFCCD5614BF03FF00F35F9D /* UPCCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFCCD5514BF03FF00F35F9D /* UPCCommentView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,8 +187,11 @@
 		1DDC60A414BD89F800A6C6A1 /* ASComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASComment.m; sourceTree = "<group>"; };
 		1DDC60A714BDB1F500A6C6A1 /* timeline.comment.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = timeline.comment.json; sourceTree = "<group>"; };
 		1DDC60AA14BDB34800A6C6A1 /* UPCCommentActivityMappingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCCommentActivityMappingTest.m; sourceTree = "<group>"; };
-		1DFCCD4114BEFA1200F35F9D /* UPCTimelineViewNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; path = UPCTimelineViewNotifications.h; sourceTree = "<group>"; };
+		1DFCCD4114BEFA1200F35F9D /* UPCTimelineViewNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCTimelineViewNotifications.h; sourceTree = "<group>"; };
 		1DFCCD4214BEFA1200F35F9D /* UPCTimelineViewNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCTimelineViewNotifications.m; sourceTree = "<group>"; };
+		1DFCCD5214BF016100F35F9D /* UPCCommentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UPCCommentView.xib; sourceTree = "<group>"; };
+		1DFCCD5414BF03FF00F35F9D /* UPCCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCCommentView.h; sourceTree = "<group>"; };
+		1DFCCD5514BF03FF00F35F9D /* UPCCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCCommentView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -461,6 +466,8 @@
 		1D586EBD14976099004A5E92 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				1DFCCD5414BF03FF00F35F9D /* UPCCommentView.h */,
+				1DFCCD5514BF03FF00F35F9D /* UPCCommentView.m */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -514,6 +521,7 @@
 			isa = PBXGroup;
 			children = (
 				1D00ED6514BDE72D00929E5C /* UPCActivityView.xib */,
+				1DFCCD5214BF016100F35F9D /* UPCCommentView.xib */,
 				1D586F38149764DC004A5E92 /* UPCiSomUPC.xib */,
 				1D26416214B9CB8C0094728F /* UPCPostActivityView.xib */,
 				1D586EC914976099004A5E92 /* UPCSecondViewController.xib */,
@@ -663,6 +671,7 @@
 				1DC29D5C14A0A03E00A35D17 /* whiteArrow@2x.png in Resources */,
 				1D26416314B9CB8C0094728F /* UPCPostActivityView.xib in Resources */,
 				1D00ED6614BDE72D00929E5C /* UPCActivityView.xib in Resources */,
+				1DFCCD5314BF016100F35F9D /* UPCCommentView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -724,6 +733,7 @@
 				1D00ED6F14BDF09900929E5C /* ASComment+Description.m in Sources */,
 				1D00ED7214BDF15C00929E5C /* ASActivity+Description.m in Sources */,
 				1DFCCD4314BEFA1200F35F9D /* UPCTimelineViewNotifications.m in Sources */,
+				1DFCCD5614BF03FF00F35F9D /* UPCCommentView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
