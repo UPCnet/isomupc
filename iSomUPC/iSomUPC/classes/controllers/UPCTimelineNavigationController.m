@@ -47,6 +47,8 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:ACTIVITY_POSTING_REQUESTED object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:ACTIVITY_POSTING_SUCCEEDED object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:ACTIVITY_POSTING_FAILED object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:ACTIVITY_SELECTED object:nil];
 }
 
 #pragma mark - Event management
