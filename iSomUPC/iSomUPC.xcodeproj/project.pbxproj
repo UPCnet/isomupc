@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D00ED6614BDE72D00929E5C /* UPCActivityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D00ED6514BDE72D00929E5C /* UPCActivityView.xib */; };
+		1D00ED6914BDE76A00929E5C /* UPCActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D00ED6814BDE76A00929E5C /* UPCActivityViewController.m */; };
+		1D00ED6C14BDF00700929E5C /* ASNote+Description.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D00ED6B14BDF00700929E5C /* ASNote+Description.m */; };
+		1D00ED6F14BDF09900929E5C /* ASComment+Description.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D00ED6E14BDF09900929E5C /* ASComment+Description.m */; };
+		1D00ED7214BDF15C00929E5C /* ASActivity+Description.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D00ED7114BDF15C00929E5C /* ASActivity+Description.m */; };
 		1D105FDC149A15D80023D668 /* ASObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D105FDB149A15D80023D668 /* ASObject.m */; };
 		1D105FDF149A15F60023D668 /* ASPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D105FDE149A15F60023D668 /* ASPerson.m */; };
 		1D105FE2149A179B0023D668 /* ASNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D105FE1149A179B0023D668 /* ASNote.m */; };
@@ -71,6 +76,7 @@
 		1DDC60A514BD89F800A6C6A1 /* ASComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDC60A414BD89F800A6C6A1 /* ASComment.m */; };
 		1DDC60A814BDB1F500A6C6A1 /* timeline.comment.json in Resources */ = {isa = PBXBuildFile; fileRef = 1DDC60A714BDB1F500A6C6A1 /* timeline.comment.json */; };
 		1DDC60AB14BDB34800A6C6A1 /* UPCCommentActivityMappingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDC60AA14BDB34800A6C6A1 /* UPCCommentActivityMappingTest.m */; };
+		1DFCCD4314BEFA1200F35F9D /* UPCTimelineViewNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFCCD4214BEFA1200F35F9D /* UPCTimelineViewNotifications.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +90,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D00ED6514BDE72D00929E5C /* UPCActivityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UPCActivityView.xib; sourceTree = "<group>"; };
+		1D00ED6714BDE76900929E5C /* UPCActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCActivityViewController.h; sourceTree = "<group>"; };
+		1D00ED6814BDE76A00929E5C /* UPCActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCActivityViewController.m; sourceTree = "<group>"; };
+		1D00ED6A14BDF00700929E5C /* ASNote+Description.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ASNote+Description.h"; sourceTree = "<group>"; };
+		1D00ED6B14BDF00700929E5C /* ASNote+Description.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ASNote+Description.m"; sourceTree = "<group>"; };
+		1D00ED6D14BDF09900929E5C /* ASComment+Description.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ASComment+Description.h"; sourceTree = "<group>"; };
+		1D00ED6E14BDF09900929E5C /* ASComment+Description.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ASComment+Description.m"; sourceTree = "<group>"; };
+		1D00ED7014BDF15B00929E5C /* ASActivity+Description.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ASActivity+Description.h"; sourceTree = "<group>"; };
+		1D00ED7114BDF15C00929E5C /* ASActivity+Description.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ASActivity+Description.m"; sourceTree = "<group>"; };
 		1D105FDA149A15D80023D668 /* ASObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASObject.h; sourceTree = "<group>"; };
 		1D105FDB149A15D80023D668 /* ASObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASObject.m; sourceTree = "<group>"; };
 		1D105FDD149A15F60023D668 /* ASPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPerson.h; sourceTree = "<group>"; };
@@ -144,7 +159,7 @@
 		1D586F5514977EEB004A5E92 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1D586F5714977EFA004A5E92 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		1D586F881498AE22004A5E92 /* UPCTimelineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UPCTimelineView.xib; sourceTree = "<group>"; };
-		1D586F8A1498AECF004A5E92 /* UPCTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = UPCTimelineViewController.h; sourceTree = "<group>"; };
+		1D586F8A1498AECF004A5E92 /* UPCTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCTimelineViewController.h; sourceTree = "<group>"; };
 		1D586F8B1498AECF004A5E92 /* UPCTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCTimelineViewController.m; sourceTree = "<group>"; };
 		1DC29D4014A095F300A35D17 /* timeline.post.invalid-date.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "timeline.post.invalid-date.json"; sourceTree = "<group>"; };
 		1DC29D4514A096FF00A35D17 /* UPCDateMappingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCDateMappingTest.m; sourceTree = "<group>"; };
@@ -170,6 +185,8 @@
 		1DDC60A414BD89F800A6C6A1 /* ASComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASComment.m; sourceTree = "<group>"; };
 		1DDC60A714BDB1F500A6C6A1 /* timeline.comment.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = timeline.comment.json; sourceTree = "<group>"; };
 		1DDC60AA14BDB34800A6C6A1 /* UPCCommentActivityMappingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCCommentActivityMappingTest.m; sourceTree = "<group>"; };
+		1DFCCD4114BEFA1200F35F9D /* UPCTimelineViewNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; path = UPCTimelineViewNotifications.h; sourceTree = "<group>"; };
+		1DFCCD4214BEFA1200F35F9D /* UPCTimelineViewNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCTimelineViewNotifications.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -397,16 +414,20 @@
 		1D586EB514976099004A5E92 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1D00ED6714BDE76900929E5C /* UPCActivityViewController.h */,
+				1D00ED6814BDE76A00929E5C /* UPCActivityViewController.m */,
 				1D586EB814976099004A5E92 /* UPCSecondViewController.h */,
 				1D586EB914976099004A5E92 /* UPCSecondViewController.m */,
-				1D586F8A1498AECF004A5E92 /* UPCTimelineViewController.h */,
-				1D586F8B1498AECF004A5E92 /* UPCTimelineViewController.m */,
 				1D26416514B9CD1C0094728F /* UPCPostActivityViewController.h */,
 				1D26416614B9CD1D0094728F /* UPCPostActivityViewController.m */,
 				1D26416B14B9E2C00094728F /* UPCPostActivityViewNotifications.h */,
 				1D26416C14B9E2C00094728F /* UPCPostActivityViewNotifications.m */,
 				1D26416814B9DB4D0094728F /* UPCTimelineNavigationController.h */,
 				1D26416914B9DB4D0094728F /* UPCTimelineNavigationController.m */,
+				1D586F8A1498AECF004A5E92 /* UPCTimelineViewController.h */,
+				1D586F8B1498AECF004A5E92 /* UPCTimelineViewController.m */,
+				1DFCCD4114BEFA1200F35F9D /* UPCTimelineViewNotifications.h */,
+				1DFCCD4214BEFA1200F35F9D /* UPCTimelineViewNotifications.m */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -421,6 +442,12 @@
 		1D586EBB14976099004A5E92 /* helpers */ = {
 			isa = PBXGroup;
 			children = (
+				1D00ED7014BDF15B00929E5C /* ASActivity+Description.h */,
+				1D00ED7114BDF15C00929E5C /* ASActivity+Description.m */,
+				1D00ED6D14BDF09900929E5C /* ASComment+Description.h */,
+				1D00ED6E14BDF09900929E5C /* ASComment+Description.m */,
+				1D00ED6A14BDF00700929E5C /* ASNote+Description.h */,
+				1D00ED6B14BDF00700929E5C /* ASNote+Description.m */,
 				1DC29D6714A0B0AB00A35D17 /* UPCMaxConnector.h */,
 				1DC29D6814A0B0AB00A35D17 /* UPCMaxConnector.m */,
 				1DC29D6A14A0B0CD00A35D17 /* UPCMaxNotifications.h */,
@@ -486,10 +513,11 @@
 		1D586EC714976099004A5E92 /* xib */ = {
 			isa = PBXGroup;
 			children = (
-				1D586F881498AE22004A5E92 /* UPCTimelineView.xib */,
+				1D00ED6514BDE72D00929E5C /* UPCActivityView.xib */,
 				1D586F38149764DC004A5E92 /* UPCiSomUPC.xib */,
 				1D26416214B9CB8C0094728F /* UPCPostActivityView.xib */,
 				1D586EC914976099004A5E92 /* UPCSecondViewController.xib */,
+				1D586F881498AE22004A5E92 /* UPCTimelineView.xib */,
 			);
 			path = xib;
 			sourceTree = "<group>";
@@ -634,6 +662,7 @@
 				1DC29D5B14A0A03E00A35D17 /* whiteArrow.png in Resources */,
 				1DC29D5C14A0A03E00A35D17 /* whiteArrow@2x.png in Resources */,
 				1D26416314B9CB8C0094728F /* UPCPostActivityView.xib in Resources */,
+				1D00ED6614BDE72D00929E5C /* UPCActivityView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,6 +719,11 @@
 				1D26416A14B9DB4E0094728F /* UPCTimelineNavigationController.m in Sources */,
 				1D26416D14B9E2C10094728F /* UPCPostActivityViewNotifications.m in Sources */,
 				1DDC60A514BD89F800A6C6A1 /* ASComment.m in Sources */,
+				1D00ED6914BDE76A00929E5C /* UPCActivityViewController.m in Sources */,
+				1D00ED6C14BDF00700929E5C /* ASNote+Description.m in Sources */,
+				1D00ED6F14BDF09900929E5C /* ASComment+Description.m in Sources */,
+				1D00ED7214BDF15C00929E5C /* ASActivity+Description.m in Sources */,
+				1DFCCD4314BEFA1200F35F9D /* UPCTimelineViewNotifications.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

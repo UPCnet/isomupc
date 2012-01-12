@@ -10,6 +10,8 @@
 #import "UPCMaxConnector.h"
 #import "UPCPostActivityViewController.h"
 #import "UPCPostActivityViewNotifications.h"
+#import "UPCTimelineViewNotifications.h"
+#import "UPCActivityViewController.h"
 
 
 #pragma mark - Class extension
@@ -19,6 +21,7 @@
 - (void) activityPostingRequested:(NSNotification *)notification;
 - (void) activityPostingSucceeded:(NSNotification *)notification;
 - (void) activityPostingFailed:(NSNotification *)notification;
+- (void) activitySelected:(NSNotification *)notification;
 @end
 
 
@@ -34,6 +37,8 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(activityPostingRequested:) name:ACTIVITY_POSTING_REQUESTED object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(activityPostingSucceeded:) name:ACTIVITY_POSTING_SUCCEEDED object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(activityPostingFailed:) name:ACTIVITY_POSTING_FAILED object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(activitySelected:) name:ACTIVITY_SELECTED object:nil];
 }
 
 - (void)viewDidUnload
@@ -69,6 +74,13 @@
 
 - (void) activityPostingFailed:(NSNotification *)notification
 {
+}
+
+- (void)activitySelected:(NSNotification *)notification
+{
+    ASActivity *activity = [notification.userInfo objectForKey:ACTIVITY_KEY];
+    UPCActivityViewController *activityViewController = [[UPCActivityViewController alloc] initWithActivity:activity];
+    [self pushViewController:activityViewController animated:YES];
 }
 
 @end

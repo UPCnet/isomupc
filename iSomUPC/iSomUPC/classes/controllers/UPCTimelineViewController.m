@@ -10,6 +10,8 @@
 #import "UPCMaxConnector.h"
 #import "UPCMaxNotifications.h"
 #import "ASActivityStreams.h"
+#import "UPCActivityViewController.h"
+#import "UPCTimelineViewNotifications.h"
 
 
 @interface UPCTimelineViewController ()
@@ -135,6 +137,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    ASActivity *activity = [[[UPCMaxConnector sharedMaxConnector] timeline] objectAtIndex:indexPath.row];
+    NSDictionary *activityInfo = [NSDictionary dictionaryWithObject:activity forKey:ACTIVITY_KEY];
+    [[NSNotificationCenter defaultCenter] postNotificationName:ACTIVITY_SELECTED object:self userInfo:activityInfo];
 }
 
 @end
