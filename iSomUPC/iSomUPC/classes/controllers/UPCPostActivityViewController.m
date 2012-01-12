@@ -40,6 +40,7 @@
 {
     [super viewDidUnload];
     self.postActivityButton = nil;
+    self.activityTextView = nil;
 }
 
 #pragma mark - UITextView delegate - Enable / disable post activity button
