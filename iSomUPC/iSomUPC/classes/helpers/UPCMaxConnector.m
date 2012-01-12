@@ -52,7 +52,7 @@
 
 - (void)refreshTimeline
 {
-    RKObjectManager *objectManager = [UPCRestKitConfigurator sharedManager];
+    RKObjectManager *objectManager = [UPCRestKitConfigurator sharedConfigurator].manager;
     [objectManager loadObjectsAtResourcePath:[self timelineResourcePath] delegate:self];
 }
 

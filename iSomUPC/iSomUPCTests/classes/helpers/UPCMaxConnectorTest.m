@@ -26,7 +26,7 @@ describe(@"UPCMaxConnector", ^{
         it(@"should delegate operation to UPCRestKitConfigurator's sharedObjectManager", ^{
             RKObjectManager *objectManager = [RKObjectManager mock];
             [[objectManager should] receive:@selector(loadObjectsAtResourcePath:delegate:)];
-            [[UPCRestKitConfigurator stubAndReturn:objectManager] sharedManager];
+            [[[UPCRestKitConfigurator sharedConfigurator] stubAndReturn:objectManager] manager];
             
             [maxConnector refreshTimeline];
         });

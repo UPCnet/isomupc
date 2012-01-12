@@ -11,9 +11,47 @@
 #import "ASActivityStreams.h"
 
 
+#pragma mark - Class extension
+
+@interface UPCRestKitConfigurator ()
+
+@property (strong, nonatomic) RKObjectManager *manager;
+@property (strong, nonatomic) RKObjectMapping *personMapping;
+@property (strong, nonatomic) RKObjectMapping *noteMapping;
+@property (strong, nonatomic) RKObjectMapping *commentMapping;
+@property (strong, nonatomic) RKObjectMapping *activityMapping;
+
+- (void)configureRestKitObjectManager;
+
+@end
+
+
+#pragma mark - Class implementation
+
 @implementation UPCRestKitConfigurator
 
-+ (void)configureRestKitObjectManager
+#pragma mark Synthesized properties
+
+@synthesize manager;
+@synthesize personMapping;
+@synthesize noteMapping;
+@synthesize commentMapping;
+@synthesize activityMapping;
+
+#pragma mark Init and dealloc
+
+- (id)init {
+    self = [super init];
+    if (self != nil) 
+    {
+        [self configureRestKitObjectManager];
+    }
+    return self;
+}
+
+#pragma mark Factory methods
+
+- (void)configureRestKitObjectManager
 {
     NSDateFormatter *rfc3339DateFormatter = [[NSDateFormatter alloc] init];
     rfc3339DateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
@@ -30,31 +68,31 @@
     RKObjectMapping *objectMapping = [RKObjectMapping mappingForClass:[ASObject class]];
     [objectMapping mapAttributes:@"id", nil];
     
-    RKObjectMapping *personMapping = [RKObjectMapping mappingForClass:[ASPerson class]];
-    [personMapping mapAttributes:@"id", @"displayName", @"image", @"url", @"published", @"updated", nil];
+    self.personMapping = [RKObjectMapping mappingForClass:[ASPerson class]];
+    [self.personMapping mapAttributes:@"id", @"displayName", @"image", @"url", @"published", @"updated", nil];
     
-    RKObjectMapping *noteMapping = [RKObjectMapping mappingForClass:[ASNote class]];
-    [noteMapping mapAttributes:@"id", @"content", @"url", @"published", @"updated", nil];
-    [noteMapping mapRelationship:@"author" withMapping:objectDynamicMapping];
+    self.noteMapping = [RKObjectMapping mappingForClass:[ASNote class]];
+    [self.noteMapping mapAttributes:@"id", @"content", @"url", @"published", @"updated", nil];
+    [self.noteMapping mapRelationship:@"author" withMapping:objectDynamicMapping];
     
-    RKObjectMapping *commentMapping = [RKObjectMapping mappingForClass:[ASComment class]];
-    [commentMapping mapAttributes:@"id", @"displayName", @"content", @"published", @"updated", nil];
-    [commentMapping mapRelationship:@"author" withMapping:objectDynamicMapping];
-    [commentMapping mapRelationship:@"inReplyTo" withMapping:objectDynamicMapping];
+    self.commentMapping = [RKObjectMapping mappingForClass:[ASComment class]];
+    [self.commentMapping mapAttributes:@"id", @"displayName", @"content", @"published", @"updated", nil];
+    [self.commentMapping mapRelationship:@"author" withMapping:objectDynamicMapping];
+    [self.commentMapping mapRelationship:@"inReplyTo" withMapping:objectDynamicMapping];
     
     [objectDynamicMapping setObjectMapping:personMapping whenValueOfKeyPath:@"objectType" isEqualTo:@"person"];
     [objectDynamicMapping setObjectMapping:noteMapping whenValueOfKeyPath:@"objectType" isEqualTo:@"note"];
     [objectDynamicMapping setObjectMapping:commentMapping whenValueOfKeyPath:@"objectType" isEqualTo:@"comment"];
     
     // ActivityStreams activity mapping
-    RKObjectMapping *activityMapping = [RKObjectMapping mappingForClass:[ASActivity class]];
-    [activityMapping mapAttributes:@"id", @"published", @"verb", @"updated", @"url", @"title", @"content", nil];
-    [activityMapping mapRelationship:@"actor" withMapping:objectDynamicMapping];
-    [activityMapping mapRelationship:@"icon" withMapping:mediaLinkMapping];
-    [activityMapping mapRelationship:@"object" withMapping:objectDynamicMapping];
-    [activityMapping mapRelationship:@"target" withMapping:objectDynamicMapping];
-    [activityMapping mapRelationship:@"generator" withMapping:objectDynamicMapping];
-    [activityMapping mapRelationship:@"provider" withMapping:objectDynamicMapping];
+    self.activityMapping = [RKObjectMapping mappingForClass:[ASActivity class]];
+    [self.activityMapping mapAttributes:@"id", @"published", @"verb", @"updated", @"url", @"title", @"content", nil];
+    [self.activityMapping mapRelationship:@"actor" withMapping:objectDynamicMapping];
+    [self.activityMapping mapRelationship:@"icon" withMapping:mediaLinkMapping];
+    [self.activityMapping mapRelationship:@"object" withMapping:objectDynamicMapping];
+    [self.activityMapping mapRelationship:@"target" withMapping:objectDynamicMapping];
+    [self.activityMapping mapRelationship:@"generator" withMapping:objectDynamicMapping];
+    [self.activityMapping mapRelationship:@"provider" withMapping:objectDynamicMapping];
     
     // ActivityStreams object serialization
     RKObjectMapping *personSerialization = [personMapping inverseMapping];
@@ -67,24 +105,26 @@
     [activitySerialization mapRelationship:@"actor" withMapping:personSerialization];
     [activitySerialization mapRelationship:@"object" withMapping:noteSerialization];
     
-    RKObjectManager *manager = [RKObjectManager objectManagerWithBaseURL:@"http://max.beta.upcnet.es"];
-    [manager.mappingProvider setMapping:activityMapping forKeyPath:@"items"];
-    [manager.mappingProvider setSerializationMapping:activitySerialization forClass:[ASActivity class]];
-    manager.serializationMIMEType = RKMIMETypeJSON;
+    self.manager = [RKObjectManager objectManagerWithBaseURL:@"http://max.beta.upcnet.es"];
+    [self.manager.mappingProvider setMapping:activityMapping forKeyPath:@"items"];
+    [self.manager.mappingProvider setSerializationMapping:activitySerialization forClass:[ASActivity class]];
+    self.manager.serializationMIMEType = RKMIMETypeJSON;
     
     // Route mapping
-    [manager.router routeClass:[ASActivity class] toResourcePath:@"/people/:actor.displayName/activities" forMethod:RKRequestMethodPOST];
-    [manager.router routeClass:[ASActivity class] toResourcePath:@"/activities/:id"];
+    [self.manager.router routeClass:[ASActivity class] toResourcePath:@"/people/:actor.displayName/activities" forMethod:RKRequestMethodPOST];
+    [self.manager.router routeClass:[ASActivity class] toResourcePath:@"/activities/:id"];
 }
 
-+ (RKObjectManager *)sharedManager
++ (UPCRestKitConfigurator *)sharedConfigurator
 {
+    static UPCRestKitConfigurator *sharedConfigurator;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        [UPCRestKitConfigurator configureRestKitObjectManager];
+        sharedConfigurator = [UPCRestKitConfigurator alloc];
+        sharedConfigurator = [sharedConfigurator init];
     });
     
-    return [RKObjectManager sharedManager];
+    return sharedConfigurator;
 }
 
 @end

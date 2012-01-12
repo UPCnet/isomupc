@@ -66,7 +66,7 @@
     activity.verb = @"post";
     activity.actor = user;
     activity.object = note;
-    RKObjectManager *objectManager = [UPCRestKitConfigurator sharedManager];
+    RKObjectManager *objectManager = [UPCRestKitConfigurator sharedConfigurator].manager;
     [objectManager postObject:activity mapResponseWith:[objectManager.mappingProvider mappingForKeyPath:@"items"] delegate:self];
     [[NSNotificationCenter defaultCenter] postNotificationName:ACTIVITY_POSTING_REQUESTED object:self];
 }

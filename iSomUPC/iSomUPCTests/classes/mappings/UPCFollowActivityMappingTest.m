@@ -21,7 +21,7 @@ describe(@"ActivityStreams mapping", ^{
         
         beforeAll(^{
             id activitiesInfo = [UPCRKJSonParser parse:@"timeline.follow.json"];
-            RKObjectMappingProvider *provider = [UPCRestKitConfigurator sharedManager].mappingProvider;
+            RKObjectMappingProvider *provider = [UPCRestKitConfigurator sharedConfigurator].manager.mappingProvider;
             RKObjectMapper* mapper = [RKObjectMapper mapperWithObject:activitiesInfo mappingProvider:provider];
             parsedActivities = [[mapper performMapping] asCollection];
             parsedActivity = [parsedActivities objectAtIndex:0];

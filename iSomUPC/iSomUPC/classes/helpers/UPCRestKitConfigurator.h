@@ -10,6 +10,12 @@
 
 @interface UPCRestKitConfigurator : NSObject
 
-+ (RKObjectManager *)sharedManager;
+@property (strong, readonly, nonatomic) RKObjectManager *manager;
+@property (strong, readonly, nonatomic) RKObjectMapping *personMapping;
+@property (strong, readonly, nonatomic) RKObjectMapping *noteMapping;
+@property (strong, readonly, nonatomic) RKObjectMapping *commentMapping;
+@property (strong, readonly, nonatomic) RKObjectMapping *activityMapping;
+
++ (UPCRestKitConfigurator *)sharedConfigurator;
 
 @end

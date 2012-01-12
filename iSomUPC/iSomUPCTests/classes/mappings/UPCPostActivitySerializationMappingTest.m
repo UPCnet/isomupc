@@ -35,7 +35,7 @@ describe(@"ActivityStreams serialization mapping", ^{
             activity.published = [NSDate date];
             activity.id = @"activity-id";
             
-            RKObjectMappingProvider *provider = [UPCRestKitConfigurator sharedManager].mappingProvider;
+            RKObjectMappingProvider *provider = [UPCRestKitConfigurator sharedConfigurator].manager.mappingProvider;
             RKObjectMapping *serializationMapping = [provider serializationMappingForClass:[ASActivity class]];
             RKObjectSerializer *serializer = [RKObjectSerializer serializerWithObject:activity mapping:serializationMapping];
             parsedActivity = [serializer serializedObject:&serializationError];
