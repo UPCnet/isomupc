@@ -110,6 +110,11 @@
 
 #pragma mark - UITableViewDataSource methods
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 50;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     self.tableView = tableView;
@@ -123,6 +128,9 @@
     if (timelineCell == nil) 
     {
         timelineCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:TIMELINE_CELL_ID];
+        timelineCell.imageView.image = [UIImage imageNamed:@"user"];
+        timelineCell.textLabel.font = [timelineCell.textLabel.font fontWithSize:14];
+        timelineCell.detailTextLabel.font = [timelineCell.detailTextLabel.font fontWithSize:10];
     }
     
     ASActivity *activity = [[UPCMaxConnector sharedMaxConnector].timeline objectAtIndex:indexPath.row];
