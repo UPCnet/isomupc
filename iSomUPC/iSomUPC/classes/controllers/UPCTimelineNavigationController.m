@@ -66,16 +66,18 @@
 
 - (void) activityPostingRequested:(NSNotification *)notification
 {
-    [self.presentedViewController dismissModalViewControllerAnimated:YES];
 }
 
 - (void) activityPostingSucceeded:(NSNotification *)notification
 {
+    [self.presentedViewController dismissModalViewControllerAnimated:YES];
     [[UPCMaxConnector sharedMaxConnector] refreshTimeline];
 }
 
 - (void) activityPostingFailed:(NSNotification *)notification
 {
+    [self.presentedViewController dismissModalViewControllerAnimated:YES];
+    NSLog(@"TODO: Show error message");
 }
 
 - (void)activitySelected:(NSNotification *)notification

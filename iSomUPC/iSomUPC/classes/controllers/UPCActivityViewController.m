@@ -167,16 +167,17 @@
 
 - (void)commentPostingRequested:(NSNotification *)notification
 {
-    [self.presentedViewController dismissModalViewControllerAnimated:YES];
 }
 
 - (void)commentPostingSucceeded:(NSNotification *)notification
 {
+    [self.presentedViewController dismissModalViewControllerAnimated:YES];
     [self loadComments];
 }
 
 - (void)commentPostingFailed:(NSNotification *)notification
 {
+    [self.presentedViewController dismissModalViewControllerAnimated:YES];
     NSLog(@"TODO: Show error message");
 }
 
