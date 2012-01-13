@@ -135,7 +135,6 @@
 {
     UPCRestKitConfigurator *configurator = [UPCRestKitConfigurator sharedConfigurator];
     NSString *commentsPath = [NSString stringWithFormat:@"/activities/%@/comments", self.activity.id];
-    NSLog(@"Comments resource path: %@", commentsPath);
     [configurator.manager loadObjectsAtResourcePath:commentsPath delegate:self block:^(RKObjectLoader *objectLoader) {
         objectLoader.objectMapping = configurator.commentMapping;
     }];
