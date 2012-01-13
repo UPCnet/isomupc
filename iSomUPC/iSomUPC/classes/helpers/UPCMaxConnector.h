@@ -11,6 +11,7 @@
 
 @interface UPCMaxConnector : NSObject <RKObjectLoaderDelegate>
 
+@property (strong, nonatomic) NSString *authenticatedUser;
 @property (strong, readonly, nonatomic) NSArray *timeline;
 @property (strong, readonly, nonatomic) NSDate *timelineLastUpdate;
 @property (strong, readonly, nonatomic) NSArray *activities;
@@ -18,7 +19,6 @@
 
 + (UPCMaxConnector *)sharedMaxConnector;
 
-- (NSString *)authenticatedUser;
 - (void)refreshTimeline;
 - (void)refreshActivities;
 

@@ -8,7 +8,8 @@
 
 #import "UPCAppDelegate.h"
 #import "UPCSecondViewController.h"
-#import "UPCRestKitConfigurator.h"
+#import "UPCMaxConnector.h"
+#import "UPCLoginController.h"
 #import "FlurryAnalytics.h"
 
 @implementation UPCAppDelegate
@@ -23,6 +24,11 @@
 {
     [FlurryAnalytics startSession:@"Q327W78Z3TYMEYARTQFM"];
     [self.window makeKeyAndVisible];
+    if ([UPCMaxConnector sharedMaxConnector].authenticatedUser == nil) 
+    {
+        UPCLoginController *loginController = [[UPCLoginController alloc] init];
+        [self.window.rootViewController presentModalViewController:loginController animated:NO];
+    }
     return YES;
 }
 

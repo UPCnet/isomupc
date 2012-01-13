@@ -12,6 +12,8 @@
 		1D00ED6C14BDF00700929E5C /* ASNote+Description.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D00ED6B14BDF00700929E5C /* ASNote+Description.m */; };
 		1D00ED6F14BDF09900929E5C /* ASComment+Description.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D00ED6E14BDF09900929E5C /* ASComment+Description.m */; };
 		1D00ED7214BDF15C00929E5C /* ASActivity+Description.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D00ED7114BDF15C00929E5C /* ASActivity+Description.m */; };
+		1D0A082014C057B600CE5C4F /* UPCLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D0A081F14C057B600CE5C4F /* UPCLoginView.xib */; };
+		1D0A082414C058A200CE5C4F /* UPCLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0A082314C058A000CE5C4F /* UPCLoginController.m */; };
 		1D105FDC149A15D80023D668 /* ASObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D105FDB149A15D80023D668 /* ASObject.m */; };
 		1D105FDF149A15F60023D668 /* ASPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D105FDE149A15F60023D668 /* ASPerson.m */; };
 		1D105FE2149A179B0023D668 /* ASNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D105FE1149A179B0023D668 /* ASNote.m */; };
@@ -104,6 +106,9 @@
 		1D00ED6E14BDF09900929E5C /* ASComment+Description.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ASComment+Description.m"; sourceTree = "<group>"; };
 		1D00ED7014BDF15B00929E5C /* ASActivity+Description.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ASActivity+Description.h"; sourceTree = "<group>"; };
 		1D00ED7114BDF15C00929E5C /* ASActivity+Description.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ASActivity+Description.m"; sourceTree = "<group>"; };
+		1D0A081F14C057B600CE5C4F /* UPCLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UPCLoginView.xib; sourceTree = "<group>"; };
+		1D0A082214C058A000CE5C4F /* UPCLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCLoginController.h; sourceTree = "<group>"; };
+		1D0A082314C058A000CE5C4F /* UPCLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCLoginController.m; sourceTree = "<group>"; };
 		1D105FDA149A15D80023D668 /* ASObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASObject.h; sourceTree = "<group>"; };
 		1D105FDB149A15D80023D668 /* ASObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASObject.m; sourceTree = "<group>"; };
 		1D105FDD149A15F60023D668 /* ASPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPerson.h; sourceTree = "<group>"; };
@@ -429,8 +434,8 @@
 			children = (
 				1D00ED6714BDE76900929E5C /* UPCActivityViewController.h */,
 				1D00ED6814BDE76A00929E5C /* UPCActivityViewController.m */,
-				1D586EB814976099004A5E92 /* UPCSecondViewController.h */,
-				1D586EB914976099004A5E92 /* UPCSecondViewController.m */,
+				1D0A082214C058A000CE5C4F /* UPCLoginController.h */,
+				1D0A082314C058A000CE5C4F /* UPCLoginController.m */,
 				1D26416514B9CD1C0094728F /* UPCPostActivityViewController.h */,
 				1D26416614B9CD1D0094728F /* UPCPostActivityViewController.m */,
 				1D26416B14B9E2C00094728F /* UPCPostActivityViewNotifications.h */,
@@ -439,6 +444,8 @@
 				1DFCD4FF14BF340E00F35F9D /* UPCPostCommentViewController.m */,
 				1DFCD50114BF360600F35F9D /* UPCPostCommentViewNotifications.h */,
 				1DFCD50214BF360700F35F9D /* UPCPostCommentViewNotifications.m */,
+				1D586EB814976099004A5E92 /* UPCSecondViewController.h */,
+				1D586EB914976099004A5E92 /* UPCSecondViewController.m */,
 				1D26416814B9DB4D0094728F /* UPCTimelineNavigationController.h */,
 				1D26416914B9DB4D0094728F /* UPCTimelineNavigationController.m */,
 				1D586F8A1498AECF004A5E92 /* UPCTimelineViewController.h */,
@@ -535,6 +542,7 @@
 				1D00ED6514BDE72D00929E5C /* UPCActivityView.xib */,
 				1DFCCD5214BF016100F35F9D /* UPCCommentView.xib */,
 				1D586F38149764DC004A5E92 /* UPCiSomUPC.xib */,
+				1D0A081F14C057B600CE5C4F /* UPCLoginView.xib */,
 				1D26416214B9CB8C0094728F /* UPCPostActivityView.xib */,
 				1DFCD4FC14BF336F00F35F9D /* UPCPostCommentView.xib */,
 				1D586EC914976099004A5E92 /* UPCSecondViewController.xib */,
@@ -686,6 +694,7 @@
 				1D00ED6614BDE72D00929E5C /* UPCActivityView.xib in Resources */,
 				1DFCCD5314BF016100F35F9D /* UPCCommentView.xib in Resources */,
 				1DFCD4FD14BF337000F35F9D /* UPCPostCommentView.xib in Resources */,
+				1D0A082014C057B600CE5C4F /* UPCLoginView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -750,6 +759,7 @@
 				1DFCCD5614BF03FF00F35F9D /* UPCCommentView.m in Sources */,
 				1DFCD50014BF341100F35F9D /* UPCPostCommentViewController.m in Sources */,
 				1DFCD50314BF360800F35F9D /* UPCPostCommentViewNotifications.m in Sources */,
+				1D0A082414C058A200CE5C4F /* UPCLoginController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

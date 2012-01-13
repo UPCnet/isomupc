@@ -17,6 +17,7 @@
 
 #pragma mark - Synthesized properties
 
+@synthesize authenticatedUser = _authenticatedUser;
 @synthesize timeline = _timeline;
 @synthesize activities = _activities;
 @synthesize timelineLastUpdate = _timelineLastUpdate;
@@ -38,11 +39,6 @@
 
 #pragma mark - Resource path generation
 
-- (NSString *)authenticatedUser
-{
-    return @"jose"; //TODO: Change for a proper implementation
-}
-
 - (NSString *)timelineResourcePath
 {
     return [NSString stringWithFormat:TIMELINE_RESOURCE_PATH_TEMPLATE, [self authenticatedUser]];
@@ -52,8 +48,11 @@
 
 - (void)refreshTimeline
 {
-    RKObjectManager *objectManager = [UPCRestKitConfigurator sharedConfigurator].manager;
-    [objectManager loadObjectsAtResourcePath:[self timelineResourcePath] delegate:self];
+    if (self.authenticatedUser != nil) 
+    {
+        RKObjectManager *objectManager = [UPCRestKitConfigurator sharedConfigurator].manager;
+        [objectManager loadObjectsAtResourcePath:[self timelineResourcePath] delegate:self];
+    }
 }
 
 - (void)refreshActivities
