@@ -71,29 +71,31 @@
 
 - (IBAction)post:(id)sender
 {
-    NSLog(@"TODO: Send comment to server");
-//    ASPerson *user = [[ASPerson alloc] init];
-//    user.displayName = [[UPCMaxConnector sharedMaxConnector] authenticatedUser];
-//    ASComment *comment = [[ASComment alloc] init];
-//    comment.content = self.textView.text;
-//    comment.inReplyTo = [NSArray arrayWithObject:self.activity];
-//    ASActivity *activity = [[ASActivity alloc] init];
-//    activity.verb = @"post";
-//    activity.actor = user;
-//    activity.object = comment;
-//    RKObjectManager *objectManager = [UPCRestKitConfigurator sharedConfigurator].manager;
-//    [objectManager postObject:activity mapResponseWith:[objectManager.mappingProvider mappingForKeyPath:@"items"] delegate:self];
+    ASPerson *user = [[ASPerson alloc] init];
+    user.displayName = [[UPCMaxConnector sharedMaxConnector] authenticatedUser];
+    ASComment *comment = [[ASComment alloc] init];
+    comment.content = self.textView.text;
+    ASActivity *activity = [[ASActivity alloc] init];
+    activity.verb = @"post";
+    activity.actor = user;
+    activity.object = comment;
+    
+    UPCRestKitConfigurator *configurator = [UPCRestKitConfigurator sharedConfigurator];
+    NSString *commentsPath = [NSString stringWithFormat:@"/activities/%@/comments", self.activity.id];
+    RKObjectSerializer *serializer = [RKObjectSerializer serializerWithObject:activity mapping:configurator.postCommentActivitySerialization];
+    [configurator.manager.client post:commentsPath params:[serializer serializationForMIMEType:RKMIMETypeJSON error:nil] delegate:self];
+
     [[NSNotificationCenter defaultCenter] postNotificationName:COMMENT_POSTING_REQUESTED object:self];
 }
 
 #pragma mark - Object loader delegate: hanlde result of post operation
 
-- (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects
+- (void)request:(RKRequest *)request didLoadResponse:(RKResponse *)response
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:COMMENT_POSTING_SUCCEEDED object:self];
 }
 
-- (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
+- (void)request:(RKRequest *)request didFailLoadWithError:(NSError *)error
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:COMMENT_POSTING_FAILED object:self];
 }

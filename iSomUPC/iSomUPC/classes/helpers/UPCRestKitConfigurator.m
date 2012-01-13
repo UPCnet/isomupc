@@ -20,6 +20,7 @@
 @property (strong, nonatomic) RKObjectMapping *noteMapping;
 @property (strong, nonatomic) RKObjectMapping *commentMapping;
 @property (strong, nonatomic) RKObjectMapping *activityMapping;
+@property (strong, nonatomic) RKObjectMapping *postCommentActivitySerialization;
 
 - (void)configureRestKitObjectManager;
 
@@ -37,6 +38,7 @@
 @synthesize noteMapping;
 @synthesize commentMapping;
 @synthesize activityMapping;
+@synthesize postCommentActivitySerialization;
 
 #pragma mark Init and dealloc
 
@@ -79,6 +81,7 @@
     [self.commentMapping mapAttributes:@"id", @"displayName", @"content", @"published", @"updated", nil];
     [self.commentMapping mapRelationship:@"author" withMapping:objectDynamicMapping];
     [self.commentMapping mapRelationship:@"inReplyTo" withMapping:objectDynamicMapping];
+    self.commentMapping.rootKeyPath = @"items";
     
     [objectDynamicMapping setObjectMapping:personMapping whenValueOfKeyPath:@"objectType" isEqualTo:@"person"];
     [objectDynamicMapping setObjectMapping:noteMapping whenValueOfKeyPath:@"objectType" isEqualTo:@"note"];
@@ -99,11 +102,17 @@
     [personSerialization mapAttributes:@"objectType", nil];
     RKObjectMapping *noteSerialization = [noteMapping inverseMapping];
     [noteSerialization mapAttributes:@"objectType", nil];
+    RKObjectMapping *commentSerialization = [commentMapping inverseMapping];
+    [commentSerialization mapAttributes:@"objectType", nil];
     
     // ActivityStreams activity serialization
     RKObjectMapping *activitySerialization = [activityMapping inverseMapping];
     [activitySerialization mapRelationship:@"actor" withMapping:personSerialization];
     [activitySerialization mapRelationship:@"object" withMapping:noteSerialization];
+    
+    self.postCommentActivitySerialization = [activityMapping inverseMapping];
+    [self.postCommentActivitySerialization mapRelationship:@"actor" withMapping:personSerialization];
+    [self.postCommentActivitySerialization mapRelationship:@"object" withMapping:commentSerialization];
     
     self.manager = [RKObjectManager objectManagerWithBaseURL:@"http://max.beta.upcnet.es"];
     [self.manager.mappingProvider setMapping:activityMapping forKeyPath:@"items"];

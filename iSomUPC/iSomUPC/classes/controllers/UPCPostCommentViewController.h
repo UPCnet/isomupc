@@ -11,7 +11,7 @@
 #import "ASActivityStreams.h"
 
 
-@interface UPCPostCommentViewController : UIViewController <UITextViewDelegate, RKObjectLoaderDelegate>
+@interface UPCPostCommentViewController : UIViewController <UITextViewDelegate, RKRequestDelegate>
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *postButton;
 @property (strong, nonatomic) IBOutlet UITextView *textView;
