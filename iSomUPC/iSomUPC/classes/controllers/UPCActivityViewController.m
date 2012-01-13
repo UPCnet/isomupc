@@ -85,6 +85,11 @@
     [self loadComments];
 }
 
+- (void)viewWillUnload
+{
+    [[UPCRestKitConfigurator sharedConfigurator].manager.client.requestQueue cancelRequestsWithDelegate:self];
+}
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];
