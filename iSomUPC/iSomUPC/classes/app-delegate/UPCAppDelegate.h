@@ -11,6 +11,5 @@
 @interface UPCAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIWindow *window;
-@property (strong, nonatomic) IBOutlet UITabBarController *tabBarController;
 
 @end
