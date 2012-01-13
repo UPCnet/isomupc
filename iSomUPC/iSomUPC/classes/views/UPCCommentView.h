@@ -15,6 +15,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *commentLabel;
 @property (strong, nonatomic) IBOutlet UILabel *userAndDateLabel;
 
+- (id)initWithFrame:(CGRect)frame;
 - (void)populateWithComment:(ASComment *)comment;
 
 @end

@@ -14,10 +14,21 @@
 @synthesize commentLabel;
 @synthesize userAndDateLabel;
 
+- (id)initWithFrame:(CGRect)frame
+{
+    NSArray *objects = [[NSBundle mainBundle] loadNibNamed:@"UPCCommentView" owner:nil options:nil];
+    self = [objects lastObject];
+    self.frame = frame;
+    return self;
+}
+
 - (void)populateWithComment:(ASComment *)comment
 {
     self.commentLabel.text = comment.content;
-    self.userAndDateLabel.text = [NSString stringWithFormat:@"%@ %@", ((ASPerson *)comment.author).displayName, comment.published];
+    if (comment.published != nil)
+        self.userAndDateLabel.text = [NSString stringWithFormat:@"%@ %@", ((ASPerson *)comment.author).displayName, comment.published];
+    else
+        self.userAndDateLabel.text = [NSString stringWithFormat:@"%@", ((ASPerson *)comment.author).displayName];
 }
 
 - (void)layoutSubviews
@@ -30,7 +41,7 @@
 - (CGSize)sizeThatFits:(CGSize)size
 {
     CGSize commentLabelSize = [self.commentLabel sizeThatFits:size];
-    return CGSizeMake(size.width, commentLabelSize.height + 8 + self.userAndDateLabel.frame.size.height + 10);
+    return CGSizeMake(size.width, self.commentLabel.frame.origin.y + commentLabelSize.height + 8 + self.userAndDateLabel.frame.size.height + 10);
 }
 
 @end

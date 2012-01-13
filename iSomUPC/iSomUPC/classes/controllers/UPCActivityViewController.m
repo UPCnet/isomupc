@@ -10,17 +10,20 @@
 #import "UPCRestKitConfigurator.h"
 #import "UPCPostCommentViewController.h"
 #import "UPCPostCommentViewNotifications.h"
+#import "UPCCommentView.h"
 
 
 #pragma mark - Class extension
 
 @interface UPCActivityViewController ()
 @property (strong, nonatomic) ASActivity *activity;
+@property (strong, nonatomic) NSMutableArray *commentViews;
 - (void)newComment:(id)sender;
-- (void) commentPostingCancelled:(NSNotification *)notification;
-- (void) commentPostingRequested:(NSNotification *)notification;
-- (void) commentPostingSucceeded:(NSNotification *)notification;
-- (void) commentPostingFailed:(NSNotification *)notification;
+- (void)commentPostingCancelled:(NSNotification *)notification;
+- (void)commentPostingRequested:(NSNotification *)notification;
+- (void)commentPostingSucceeded:(NSNotification *)notification;
+- (void)commentPostingFailed:(NSNotification *)notification;
+- (void)loadComments;
 @end
 
 
@@ -35,6 +38,7 @@
 @synthesize dateLabel;
 @synthesize activityContentLabel;
 @synthesize activity = _activity;
+@synthesize commentViews;
 
 #pragma mark Init and dealloc
 
@@ -61,6 +65,8 @@
 
     [super viewDidLoad];
     
+    self.commentViews = [[NSMutableArray alloc] init];
+    
     self.navigationItem.title = @"Actividad";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(newComment:)];
     
@@ -75,6 +81,8 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(commentPostingRequested:) name:COMMENT_POSTING_REQUESTED object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(commentPostingSucceeded:) name:COMMENT_POSTING_SUCCEEDED object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(commentPostingFailed:) name:COMMENT_POSTING_FAILED object:nil];
+
+    [self loadComments];
 }
 
 - (void)viewDidUnload
@@ -89,13 +97,55 @@
     self.scrollView = nil;
     self.dateLabel = nil;
     self.activityContentLabel = nil;
+    
+    self.commentViews = nil;
+}
+
+#pragma mark Create and place comments
+
+- (void)showComments:(NSArray *)comments
+{
+    [self.commentViews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        UPCCommentView *commentView = (UPCCommentView *)obj;
+        [commentView removeFromSuperview];
+    }];
+    [self.commentViews removeAllObjects];
+    
+    CGRect commentViewRect = CGRectMake(20, 0, self.scrollView.bounds.size.width - 40, 40);
+    [comments enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        ASComment *comment = (ASComment *)obj;
+        UPCCommentView *commentView = [[UPCCommentView alloc] initWithFrame:commentViewRect];
+        [commentView populateWithComment:comment];
+        [self.commentViews addObject:commentView];
+    }];
+    
+    __block float currentYCoord = self.activityContentLabel.frame.origin.y + self.activityContentLabel.frame.size.height;
+    [self.commentViews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        UPCCommentView *commentView = (UPCCommentView *)obj;
+        [commentView sizeToFit];
+        commentView.frame = CGRectMake(20, currentYCoord, commentView.frame.size.width, commentView.frame.size.height);
+        [self.scrollView addSubview:commentView];
+        currentYCoord += commentView.frame.size.height;
+    }];
+    
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, currentYCoord);
+}
+
+- (void)loadComments
+{
+    UPCRestKitConfigurator *configurator = [UPCRestKitConfigurator sharedConfigurator];
+    NSString *commentsPath = [NSString stringWithFormat:@"/activities/%@/comments", self.activity.id];
+    NSLog(@"Comments resource path: %@", commentsPath);
+    [configurator.manager loadObjectsAtResourcePath:commentsPath delegate:self block:^(RKObjectLoader *objectLoader) {
+        objectLoader.objectMapping = configurator.commentMapping;
+    }];
 }
 
 #pragma mark Comment loading
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects
 {
-    NSLog(@"TODO: Show comments in interface");
+    [self showComments:objects];
 }
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error
@@ -111,22 +161,22 @@
     [self presentModalViewController:postCommentViewController animated:YES];
 }
 
-- (void) commentPostingCancelled:(NSNotification *)notification
+- (void)commentPostingCancelled:(NSNotification *)notification
 {
     [self.presentedViewController dismissModalViewControllerAnimated:YES];
 }
 
-- (void) commentPostingRequested:(NSNotification *)notification
+- (void)commentPostingRequested:(NSNotification *)notification
 {
     [self.presentedViewController dismissModalViewControllerAnimated:YES];
 }
 
-- (void) commentPostingSucceeded:(NSNotification *)notification
+- (void)commentPostingSucceeded:(NSNotification *)notification
 {
-    NSLog(@"TODO: Refresh comment list");
+    [self loadComments];
 }
 
-- (void) commentPostingFailed:(NSNotification *)notification
+- (void)commentPostingFailed:(NSNotification *)notification
 {
     NSLog(@"TODO: Show error message");
 }
