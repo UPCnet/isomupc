@@ -7,7 +7,6 @@
 //
 
 #import "UPCAppDelegate.h"
-#import "UPCSecondViewController.h"
 #import "UPCMaxConnector.h"
 #import "UPCLoginController.h"
 #import "FlurryAnalytics.h"

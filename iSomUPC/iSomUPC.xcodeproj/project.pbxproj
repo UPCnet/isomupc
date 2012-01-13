@@ -39,12 +39,12 @@
 		1D586E9C14975EB9004A5E92 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586E6E14975EB8004A5E92 /* UIKit.framework */; };
 		1D586E9D14975EB9004A5E92 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586E7014975EB8004A5E92 /* Foundation.framework */; };
 		1D586ECA14976099004A5E92 /* UPCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D586EB414976099004A5E92 /* UPCAppDelegate.m */; };
-		1D586ECC14976099004A5E92 /* UPCSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D586EB914976099004A5E92 /* UPCSecondViewController.m */; };
+		1D586ECC14976099004A5E92 /* UPCProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D586EB914976099004A5E92 /* UPCProfileViewController.m */; };
 		1D586ECD14976099004A5E92 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D586EC114976099004A5E92 /* first.png */; };
 		1D586ECE14976099004A5E92 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D586EC214976099004A5E92 /* first@2x.png */; };
 		1D586ECF14976099004A5E92 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D586EC314976099004A5E92 /* second.png */; };
 		1D586ED014976099004A5E92 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D586EC414976099004A5E92 /* second@2x.png */; };
-		1D586ED214976099004A5E92 /* UPCSecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D586EC914976099004A5E92 /* UPCSecondViewController.xib */; };
+		1D586ED214976099004A5E92 /* UPCProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D586EC914976099004A5E92 /* UPCProfileView.xib */; };
 		1D586ED7149760CA004A5E92 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D586ED3149760CA004A5E92 /* InfoPlist.strings */; };
 		1D586ED9149760CA004A5E92 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D586ED6149760CA004A5E92 /* main.m */; };
 		1D586EE0149761AA004A5E92 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D586EDE149761AA004A5E92 /* InfoPlist.strings */; };
@@ -148,13 +148,13 @@
 		1D586E9A14975EB9004A5E92 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		1D586EB314976099004A5E92 /* UPCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCAppDelegate.h; sourceTree = "<group>"; };
 		1D586EB414976099004A5E92 /* UPCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCAppDelegate.m; sourceTree = "<group>"; };
-		1D586EB814976099004A5E92 /* UPCSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCSecondViewController.h; sourceTree = "<group>"; };
-		1D586EB914976099004A5E92 /* UPCSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCSecondViewController.m; sourceTree = "<group>"; };
+		1D586EB814976099004A5E92 /* UPCProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCProfileViewController.h; sourceTree = "<group>"; };
+		1D586EB914976099004A5E92 /* UPCProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCProfileViewController.m; sourceTree = "<group>"; };
 		1D586EC114976099004A5E92 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		1D586EC214976099004A5E92 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
 		1D586EC314976099004A5E92 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		1D586EC414976099004A5E92 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
-		1D586EC914976099004A5E92 /* UPCSecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UPCSecondViewController.xib; sourceTree = "<group>"; };
+		1D586EC914976099004A5E92 /* UPCProfileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UPCProfileView.xib; sourceTree = "<group>"; };
 		1D586ED3149760CA004A5E92 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		1D586ED4149760CA004A5E92 /* iSomUPC-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iSomUPC-Info.plist"; sourceTree = "<group>"; };
 		1D586ED5149760CA004A5E92 /* iSomUPC-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iSomUPC-Prefix.pch"; sourceTree = "<group>"; };
@@ -448,8 +448,8 @@
 				1DFCD4FF14BF340E00F35F9D /* UPCPostCommentViewController.m */,
 				1DFCD50114BF360600F35F9D /* UPCPostCommentViewNotifications.h */,
 				1DFCD50214BF360700F35F9D /* UPCPostCommentViewNotifications.m */,
-				1D586EB814976099004A5E92 /* UPCSecondViewController.h */,
-				1D586EB914976099004A5E92 /* UPCSecondViewController.m */,
+				1D586EB814976099004A5E92 /* UPCProfileViewController.h */,
+				1D586EB914976099004A5E92 /* UPCProfileViewController.m */,
 				1D26416814B9DB4D0094728F /* UPCTimelineNavigationController.h */,
 				1D26416914B9DB4D0094728F /* UPCTimelineNavigationController.m */,
 				1D586F8A1498AECF004A5E92 /* UPCTimelineViewController.h */,
@@ -551,7 +551,7 @@
 				1D0A081F14C057B600CE5C4F /* UPCLoginView.xib */,
 				1D26416214B9CB8C0094728F /* UPCPostActivityView.xib */,
 				1DFCD4FC14BF336F00F35F9D /* UPCPostCommentView.xib */,
-				1D586EC914976099004A5E92 /* UPCSecondViewController.xib */,
+				1D586EC914976099004A5E92 /* UPCProfileView.xib */,
 				1D586F881498AE22004A5E92 /* UPCTimelineView.xib */,
 			);
 			path = xib;
@@ -684,7 +684,7 @@
 				1D586ECE14976099004A5E92 /* first@2x.png in Resources */,
 				1D586ECF14976099004A5E92 /* second.png in Resources */,
 				1D586ED014976099004A5E92 /* second@2x.png in Resources */,
-				1D586ED214976099004A5E92 /* UPCSecondViewController.xib in Resources */,
+				1D586ED214976099004A5E92 /* UPCProfileView.xib in Resources */,
 				1D586ED7149760CA004A5E92 /* InfoPlist.strings in Resources */,
 				1D586F39149764DC004A5E92 /* UPCiSomUPC.xib in Resources */,
 				1D586F891498AE22004A5E92 /* UPCTimelineView.xib in Resources */,
@@ -743,7 +743,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D586ECA14976099004A5E92 /* UPCAppDelegate.m in Sources */,
-				1D586ECC14976099004A5E92 /* UPCSecondViewController.m in Sources */,
+				1D586ECC14976099004A5E92 /* UPCProfileViewController.m in Sources */,
 				1D586ED9149760CA004A5E92 /* main.m in Sources */,
 				1D586F8C1498AECF004A5E92 /* UPCTimelineViewController.m in Sources */,
 				1D105FDC149A15D80023D668 /* ASObject.m in Sources */,
