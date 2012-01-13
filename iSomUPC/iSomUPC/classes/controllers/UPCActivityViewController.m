@@ -67,7 +67,7 @@
     
     self.commentViews = [[NSMutableArray alloc] init];
     
-    self.navigationItem.title = @"Actividad";
+    self.navigationItem.title = @"Activitat";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(newComment:)];
     
     self.userLabel.text = ((ASPerson *)self.activity.actor).displayName;
