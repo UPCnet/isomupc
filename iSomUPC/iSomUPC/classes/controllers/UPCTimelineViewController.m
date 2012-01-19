@@ -12,6 +12,7 @@
 #import "ASActivityStreams.h"
 #import "UPCActivityViewController.h"
 #import "UPCTimelineViewNotifications.h"
+#import "UIImageView+WebCache.h"
 
 
 @interface UPCTimelineViewController ()
@@ -134,9 +135,12 @@
     }
     
     ASActivity *activity = [[UPCMaxConnector sharedMaxConnector].timeline objectAtIndex:indexPath.row];
+    id userDisplayName = ((ASPerson *)activity.actor).displayName;
+    NSString *avatarURL = [NSString stringWithFormat:@"http://max.beta.upcnet.es/people/%@/avatar", userDisplayName];
     
     timelineCell.textLabel.text = [activity.verb isEqualToString:@"post"] ? ((ASNote *)activity.object).content : ((ASPerson *)activity.object).displayName;
-    timelineCell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@ - %@", ((ASPerson *)activity.actor).displayName, activity.verb, activity.published];
+    timelineCell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@ - %@", userDisplayName, activity.verb, activity.published];
+    [timelineCell.imageView setImageWithURL:[NSURL URLWithString:avatarURL] placeholderImage:[UIImage imageNamed:@"user"]];
     
     return timelineCell;
 }
