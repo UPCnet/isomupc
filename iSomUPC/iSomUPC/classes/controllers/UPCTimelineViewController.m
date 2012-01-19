@@ -13,6 +13,7 @@
 #import "UPCActivityViewController.h"
 #import "UPCTimelineViewNotifications.h"
 #import "UIImageView+WebCache.h"
+#import "NSDate+HumanReadableInterval.h"
 
 
 @interface UPCTimelineViewController ()
@@ -139,7 +140,7 @@
     NSString *avatarURL = [NSString stringWithFormat:@"http://max.beta.upcnet.es/people/%@/avatar", userDisplayName];
     
     timelineCell.textLabel.text = [activity.verb isEqualToString:@"post"] ? ((ASNote *)activity.object).content : ((ASPerson *)activity.object).displayName;
-    timelineCell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@ - %@", userDisplayName, activity.verb, activity.published];
+    timelineCell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@ - %@", userDisplayName, activity.verb, [activity.published humanReadableIntervalFrom:[NSDate date]]];
     [timelineCell.imageView setImageWithURL:[NSURL URLWithString:avatarURL] placeholderImage:[UIImage imageNamed:@"user"]];
     
     return timelineCell;
