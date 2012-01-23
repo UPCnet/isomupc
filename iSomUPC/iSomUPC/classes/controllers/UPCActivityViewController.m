@@ -11,6 +11,7 @@
 #import "UPCPostCommentViewController.h"
 #import "UPCPostCommentViewNotifications.h"
 #import "UPCCommentView.h"
+#import "UIImageView+WebCache.h"
 
 
 #pragma mark - Class extension
@@ -34,6 +35,7 @@
 #pragma mark Synthesized properties
 
 @synthesize scrollView;
+@synthesize avatarImageView;
 @synthesize userLabel;
 @synthesize dateLabel;
 @synthesize activityContentLabel;
@@ -60,7 +62,8 @@
     if (dateFormatter == nil) 
     {
         dateFormatter = [[NSDateFormatter alloc] init];
-        dateFormatter.dateStyle = NSDateFormatterMediumStyle;
+        dateFormatter.dateStyle = NSDateFormatterShortStyle;
+        dateFormatter.timeStyle = NSDateFormatterShortStyle;
     }
 
     [super viewDidLoad];
@@ -70,12 +73,17 @@
     self.navigationItem.title = @"Activitat";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(newComment:)];
     
-    self.userLabel.text = ((ASPerson *)self.activity.actor).displayName;
-    self.dateLabel.text = [dateFormatter stringFromDate:self.activity.published];
+    id userDisplayName = ((ASPerson *)self.activity.actor).displayName;
+    NSString *avatarURL = [NSString stringWithFormat:@"http://max.beta.upcnet.es/people/%@/avatar", userDisplayName];
+    
+    [self.avatarImageView setImageWithURL:[NSURL URLWithString:avatarURL] placeholderImage:[UIImage imageNamed:@"user"]];
+    self.userLabel.text = userDisplayName;
     self.activityContentLabel.text = [NSString stringWithFormat:@"%@", self.activity];
     [self.activityContentLabel sizeToFit];
+    self.dateLabel.frame = CGRectMake(self.dateLabel.frame.origin.x, self.activityContentLabel.frame.origin.y + self.activityContentLabel.frame.size.height + 8, self.dateLabel.frame.size.width, self.dateLabel.frame.size.height);
+    self.dateLabel.text = [dateFormatter stringFromDate:self.activity.published];
     
-    self.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, self.activityContentLabel.frame.origin.y + self.activityContentLabel.frame.size.height + 18);
+    self.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, self.dateLabel.frame.origin.y + self.dateLabel.frame.size.height + 18);
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(commentPostingCancelled:) name:COMMENT_POSTING_CANCELLED object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(commentPostingRequested:) name:COMMENT_POSTING_REQUESTED object:nil];
