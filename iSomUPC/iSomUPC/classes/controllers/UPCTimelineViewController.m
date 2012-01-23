@@ -12,8 +12,7 @@
 #import "ASActivityStreams.h"
 #import "UPCActivityViewController.h"
 #import "UPCTimelineViewNotifications.h"
-#import "UIImageView+WebCache.h"
-#import "NSDate+HumanReadableInterval.h"
+#import "UPCTimelineViewCell.h"
 
 
 @interface UPCTimelineViewController ()
@@ -126,22 +125,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *TIMELINE_CELL_ID = @"TIMELINE_CELL_ID";
-    UITableViewCell *timelineCell = [tableView dequeueReusableCellWithIdentifier:TIMELINE_CELL_ID];
+    UPCTimelineViewCell *timelineCell = [tableView dequeueReusableCellWithIdentifier:TIMELINE_CELL_ID];
     if (timelineCell == nil) 
     {
-        timelineCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:TIMELINE_CELL_ID];
-        timelineCell.imageView.image = [UIImage imageNamed:@"user"];
-        timelineCell.textLabel.font = [timelineCell.textLabel.font fontWithSize:14];
-        timelineCell.detailTextLabel.font = [timelineCell.detailTextLabel.font fontWithSize:10];
+        timelineCell = [[[NSBundle mainBundle] loadNibNamed:@"UPCTimelineViewCell" owner:nil options:nil] lastObject];
     }
     
     ASActivity *activity = [[UPCMaxConnector sharedMaxConnector].timeline objectAtIndex:indexPath.row];
-    id userDisplayName = ((ASPerson *)activity.actor).displayName;
-    NSString *avatarURL = [NSString stringWithFormat:@"http://max.beta.upcnet.es/people/%@/avatar", userDisplayName];
-    
-    timelineCell.textLabel.text = [activity.verb isEqualToString:@"post"] ? ((ASNote *)activity.object).content : ((ASPerson *)activity.object).displayName;
-    timelineCell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@ - %@", userDisplayName, activity.verb, [activity.published humanReadableIntervalFrom:[NSDate date]]];
-    [timelineCell.imageView setImageWithURL:[NSURL URLWithString:avatarURL] placeholderImage:[UIImage imageNamed:@"user"]];
+    [timelineCell populate:activity];
     
     return timelineCell;
 }

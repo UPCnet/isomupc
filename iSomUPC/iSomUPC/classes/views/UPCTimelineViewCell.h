@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ASActivityStreams.h"
 
 
 @interface UPCTimelineViewCell : UITableViewCell
@@ -16,5 +17,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *activityLabel;
 @property (strong, nonatomic) IBOutlet UILabel *relativeDateLabel;
 @property (strong, nonatomic) IBOutlet UILabel *numberOfCommentsLabel;
+
+- (void)populate:(ASActivity *)activity;
 
 @end
