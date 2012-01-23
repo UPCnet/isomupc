@@ -12,8 +12,9 @@
 
 @interface UPCCommentView : UIView
 
-@property (strong, nonatomic) IBOutlet UILabel *commentLabel;
-@property (strong, nonatomic) IBOutlet UILabel *userAndDateLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *avatarImageView;
+@property (strong, nonatomic) IBOutlet UILabel *userAndCommentLabel;
+@property (strong, nonatomic) IBOutlet UILabel *dateLabel;
 
 - (id)initWithFrame:(CGRect)frame;
 - (void)populateWithComment:(ASComment *)comment;

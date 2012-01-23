@@ -132,7 +132,7 @@
         [self.commentViews addObject:commentView];
     }];
     
-    __block float currentYCoord = self.activityContentLabel.frame.origin.y + self.activityContentLabel.frame.size.height;
+    __block float currentYCoord = self.dateLabel.frame.origin.y + self.dateLabel.frame.size.height;
     [self.commentViews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         UPCCommentView *commentView = (UPCCommentView *)obj;
         [commentView sizeToFit];

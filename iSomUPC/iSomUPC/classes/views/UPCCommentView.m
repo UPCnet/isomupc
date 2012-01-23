@@ -7,12 +7,14 @@
 //
 
 #import "UPCCommentView.h"
+#import "UIImageView+WebCache.h"
 
 
 @implementation UPCCommentView
 
-@synthesize commentLabel;
-@synthesize userAndDateLabel;
+@synthesize avatarImageView;
+@synthesize userAndCommentLabel;
+@synthesize dateLabel;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -24,24 +26,34 @@
 
 - (void)populateWithComment:(ASComment *)comment
 {
-    self.commentLabel.text = comment.content;
-    if (comment.published != nil)
-        self.userAndDateLabel.text = [NSString stringWithFormat:@"%@ %@", ((ASPerson *)comment.author).displayName, comment.published];
-    else
-        self.userAndDateLabel.text = [NSString stringWithFormat:@"%@", ((ASPerson *)comment.author).displayName];
+    static NSDateFormatter *dateFormatter = nil;
+    if (dateFormatter == nil) 
+    {
+        dateFormatter = [[NSDateFormatter alloc] init];
+        dateFormatter.dateStyle = NSDateFormatterShortStyle;
+        dateFormatter.timeStyle = NSDateFormatterShortStyle;
+    }
+    
+    id userDisplayName = ((ASPerson *)comment.author).displayName;
+    NSString *avatarURL = [NSString stringWithFormat:@"http://max.beta.upcnet.es/people/%@/avatar", userDisplayName];
+    
+    [self.avatarImageView setImageWithURL:[NSURL URLWithString:avatarURL] placeholderImage:[UIImage imageNamed:@"user"]];
+    self.userAndCommentLabel.text = [NSString stringWithFormat:@"%@ - %@", userDisplayName, comment.content];
+    self.dateLabel.text = (comment.published != nil) ? [dateFormatter stringFromDate:comment.published] : @"data desconeguda";
 }
 
 - (void)layoutSubviews
 {
-    self.commentLabel.frame = CGRectMake(20, 20, self.bounds.size.width - 20, 21);
-    [self.commentLabel sizeToFit];
-    self.userAndDateLabel.frame = CGRectMake(20, self.commentLabel.frame.origin.y + self.commentLabel.frame.size.height + 8, self.bounds.size.width - 40, self.userAndDateLabel.frame.size.height);
+    self.userAndCommentLabel.frame = CGRectMake(self.userAndCommentLabel.frame.origin.x, self.userAndCommentLabel.frame.origin.y, self.frame.size.width - self.avatarImageView.frame.size.width - 48, 21);
+    [self.userAndCommentLabel sizeToFit];
+    self.dateLabel.frame = CGRectMake(self.dateLabel.frame.origin.x, self.userAndCommentLabel.frame.origin.y + self.userAndCommentLabel.frame.size.height + 8, self.dateLabel.frame.size.width, self.dateLabel.frame.size.height);
 }
 
 - (CGSize)sizeThatFits:(CGSize)size
 {
-    CGSize commentLabelSize = [self.commentLabel sizeThatFits:size];
-    return CGSizeMake(size.width, self.commentLabel.frame.origin.y + commentLabelSize.height + 8 + self.userAndDateLabel.frame.size.height + 10);
+    CGSize commentLabelAvailableSize = CGSizeMake(size.width - self.avatarImageView.frame.size.width - 48, size.height);
+    CGSize commentLabelSize = [self.userAndCommentLabel sizeThatFits:commentLabelAvailableSize];
+    return CGSizeMake(size.width, self.userAndCommentLabel.frame.origin.y + commentLabelSize.height + 8 + self.dateLabel.frame.size.height + 10);
 }
 
 @end
