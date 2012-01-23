@@ -15,6 +15,8 @@
 @property (strong, nonatomic) NSDate *published;
 @property (strong, nonatomic) NSString *verb;
 
+@property (strong, nonatomic) NSArray *replies; //Not in the activity streams draft
+
 @property (strong, nonatomic) NSDate *updated;
 @property (strong, nonatomic) NSString *url;
 

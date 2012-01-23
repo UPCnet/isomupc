@@ -28,7 +28,7 @@
     self.displayNameLabel.text = userDisplayName;
     self.activityLabel.text = [activity.verb isEqualToString:@"post"] ? ((ASNote *)activity.object).content : ((ASPerson *)activity.object).displayName;
     self.relativeDateLabel.text = [activity.published humanReadableIntervalFrom:[NSDate date]];
-    self.numberOfCommentsLabel.text = @"0";
+    self.numberOfCommentsLabel.text = [NSString stringWithFormat:@"%u", [activity.replies count]];
 }
 
 

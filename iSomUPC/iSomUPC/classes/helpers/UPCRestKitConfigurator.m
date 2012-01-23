@@ -96,6 +96,7 @@
     [self.activityMapping mapRelationship:@"target" withMapping:objectDynamicMapping];
     [self.activityMapping mapRelationship:@"generator" withMapping:objectDynamicMapping];
     [self.activityMapping mapRelationship:@"provider" withMapping:objectDynamicMapping];
+    [self.activityMapping mapKeyPath:@"replies.items" toRelationship:@"replies" withMapping:objectDynamicMapping];
     
     // ActivityStreams object serialization
     RKObjectMapping *personSerialization = [personMapping inverseMapping];

@@ -16,6 +16,8 @@
 @synthesize published;
 @synthesize verb;
 
+@synthesize replies;
+
 @synthesize updated;
 @synthesize url;
 
