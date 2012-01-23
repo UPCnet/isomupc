@@ -68,6 +68,10 @@
 		1D586F5814977EFA004A5E92 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D586F5714977EFA004A5E92 /* libxml2.dylib */; };
 		1D586F891498AE22004A5E92 /* UPCTimelineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D586F881498AE22004A5E92 /* UPCTimelineView.xib */; };
 		1D586F8C1498AECF004A5E92 /* UPCTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D586F8B1498AECF004A5E92 /* UPCTimelineViewController.m */; };
+		1D773F8E14CD5E7100FB6348 /* UPCTimelineViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D773F8D14CD5E7100FB6348 /* UPCTimelineViewCell.xib */; };
+		1D773F9214CD5EE500FB6348 /* UPCTimelineViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D773F9114CD5EE500FB6348 /* UPCTimelineViewCell.m */; };
+		1D773F9A14CD63FE00FB6348 /* timeline.cell.comments.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D773F9814CD63FE00FB6348 /* timeline.cell.comments.png */; };
+		1D773F9B14CD63FE00FB6348 /* timeline.cell.comments@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D773F9914CD63FE00FB6348 /* timeline.cell.comments@2x.png */; };
 		1DC29D4314A0968C00A35D17 /* timeline.post.invalid-date.json in Resources */ = {isa = PBXBuildFile; fileRef = 1DC29D4014A095F300A35D17 /* timeline.post.invalid-date.json */; };
 		1DC29D4614A096FF00A35D17 /* UPCDateMappingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DC29D4514A096FF00A35D17 /* UPCDateMappingTest.m */; };
 		1DC29D4914A0980E00A35D17 /* UPCFollowActivityMappingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DC29D4814A0980E00A35D17 /* UPCFollowActivityMappingTest.m */; };
@@ -203,6 +207,11 @@
 		1D586F881498AE22004A5E92 /* UPCTimelineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UPCTimelineView.xib; sourceTree = "<group>"; };
 		1D586F8A1498AECF004A5E92 /* UPCTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCTimelineViewController.h; sourceTree = "<group>"; };
 		1D586F8B1498AECF004A5E92 /* UPCTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCTimelineViewController.m; sourceTree = "<group>"; };
+		1D773F8D14CD5E7100FB6348 /* UPCTimelineViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UPCTimelineViewCell.xib; sourceTree = "<group>"; };
+		1D773F9014CD5EE500FB6348 /* UPCTimelineViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCTimelineViewCell.h; sourceTree = "<group>"; };
+		1D773F9114CD5EE500FB6348 /* UPCTimelineViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCTimelineViewCell.m; sourceTree = "<group>"; };
+		1D773F9814CD63FE00FB6348 /* timeline.cell.comments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timeline.cell.comments.png; sourceTree = "<group>"; };
+		1D773F9914CD63FE00FB6348 /* timeline.cell.comments@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timeline.cell.comments@2x.png"; sourceTree = "<group>"; };
 		1DC29D4014A095F300A35D17 /* timeline.post.invalid-date.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "timeline.post.invalid-date.json"; sourceTree = "<group>"; };
 		1DC29D4514A096FF00A35D17 /* UPCDateMappingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCDateMappingTest.m; sourceTree = "<group>"; };
 		1DC29D4814A0980E00A35D17 /* UPCFollowActivityMappingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPCFollowActivityMappingTest.m; sourceTree = "<group>"; };
@@ -546,6 +555,8 @@
 			children = (
 				1DFCCD5414BF03FF00F35F9D /* UPCCommentView.h */,
 				1DFCCD5514BF03FF00F35F9D /* UPCCommentView.m */,
+				1D773F9014CD5EE500FB6348 /* UPCTimelineViewCell.h */,
+				1D773F9114CD5EE500FB6348 /* UPCTimelineViewCell.m */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -577,6 +588,8 @@
 				1D586EC214976099004A5E92 /* first@2x.png */,
 				1D586EC314976099004A5E92 /* second.png */,
 				1D586EC414976099004A5E92 /* second@2x.png */,
+				1D773F9814CD63FE00FB6348 /* timeline.cell.comments.png */,
+				1D773F9914CD63FE00FB6348 /* timeline.cell.comments@2x.png */,
 				1D27FF0314C074CE006DE71B /* user.png */,
 				1D27FF0414C074CE006DE71B /* user@2x.png */,
 			);
@@ -608,6 +621,7 @@
 				1DFCD4FC14BF336F00F35F9D /* UPCPostCommentView.xib */,
 				1D586EC914976099004A5E92 /* UPCProfileView.xib */,
 				1D586F881498AE22004A5E92 /* UPCTimelineView.xib */,
+				1D773F8D14CD5E7100FB6348 /* UPCTimelineViewCell.xib */,
 			);
 			path = xib;
 			sourceTree = "<group>";
@@ -759,6 +773,9 @@
 				1D0A082014C057B600CE5C4F /* UPCLoginView.xib in Resources */,
 				1D27FF0514C074CE006DE71B /* user.png in Resources */,
 				1D27FF0614C074CE006DE71B /* user@2x.png in Resources */,
+				1D773F8E14CD5E7100FB6348 /* UPCTimelineViewCell.xib in Resources */,
+				1D773F9A14CD63FE00FB6348 /* timeline.cell.comments.png in Resources */,
+				1D773F9B14CD63FE00FB6348 /* timeline.cell.comments@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -832,6 +849,7 @@
 				1D517DE314C837380055A16E /* UIButton+WebCache.m in Sources */,
 				1D517DE414C837380055A16E /* UIImageView+WebCache.m in Sources */,
 				1D517DE714C83DD40055A16E /* NSDate+HumanReadableInterval.m in Sources */,
+				1D773F9214CD5EE500FB6348 /* UPCTimelineViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
