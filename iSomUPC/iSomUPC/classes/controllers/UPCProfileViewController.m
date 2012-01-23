@@ -9,10 +9,12 @@
 #import "UPCProfileViewController.h"
 #import "UPCMaxConnector.h"
 #import "UPCLoginController.h"
+#import "UIImageView+WebCache.h"
 
 
 @implementation UPCProfileViewController
 
+@synthesize avatarImageView;
 @synthesize displayNameLabel;
 
 #pragma mark View lifecycle
@@ -30,7 +32,11 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.displayNameLabel.text = [UPCMaxConnector sharedMaxConnector].authenticatedUser;
+    id userDisplayName = [UPCMaxConnector sharedMaxConnector].authenticatedUser;
+    NSString *avatarURL = [NSString stringWithFormat:@"http://max.beta.upcnet.es/people/%@/avatar", userDisplayName];
+    
+    [self.avatarImageView setImageWithURL:[NSURL URLWithString:avatarURL] placeholderImage:[UIImage imageNamed:@"user"]];
+    self.displayNameLabel.text = userDisplayName;
 }
 
 #pragma mark Event management
